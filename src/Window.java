@@ -7,9 +7,11 @@ public class Window
     {
         JFrame f=new JFrame();
         String [] items = {"MandleBrot","other"};
-        JComboBox b=new JComboBox(items);//creating instance of JButton  
-        b.setBounds(10, 10,100, 40);//x axis, y axis, width, height  
-        
+        JComboBox d=new JComboBox(items);//creating instance of JButton  
+        d.setBounds(10, 10,100, 40);//x axis, y axis, width, height
+        JButton b = new JButton("Iterate");
+        b.setBounds(40, 10,100, 40);
+        f.add(d);
         f.add(b);//adding button in JFrame
         f.setSize(400,500);//400 width and 500 height  
         f.setLayout(null);//using no layout managers  
