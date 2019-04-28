@@ -18,6 +18,9 @@ public class Window
         String [] items = {"MandleBrot","other"};
         JComboBox d=new JComboBox(items);//creating instance of JButton  
         JButton b = new JButton("Iterate");
+        BackgroundPanel back;
+        
+        //back = new BackgroundPanel(, BackgroundPanel.SCALED, 1.0f, 0.5f);
         
         f.add(d);
         f.add(b);//adding button in JFrame

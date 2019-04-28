@@ -1,6 +1,9 @@
+package Window;
+
 import java.awt.*;
 import java.awt.image.*;
 import javax.swing.*;
+
 
 /*
  *  Support custom painting on a panel in the form of
