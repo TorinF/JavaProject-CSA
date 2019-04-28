@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Fractal
+comment1.params=width\ height\ imageType
+comment1.target=Fractal(int,\ int,\ int)
+comment2.params=
+comment2.target=void\ drawFractal()
+comment2.text=\r\n\ This\ draws\ a\ fractal\ using\ setRGB(int\ x,int\ y,int\ rgb)\r\n\ \r\n
+comment3.params=red\ green\ blue
+comment3.target=int\ rgb2int(int,\ int,\ int)
+comment4.params=
+comment4.target=void\ main()
+numComments=5
