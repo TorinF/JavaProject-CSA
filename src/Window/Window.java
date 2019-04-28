@@ -3,29 +3,68 @@ package Window;
 
 
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-public class Window
+
+
+
+public class Window extends JFrame
 {
+    final int height = 800;
+    final int width = 1500;
+    
+    public Window() throws IOException {
+        
+        super();
+        
+        System.out.println(getClass().getResource("/Window/Images/spacemind.jpg"));
+        
+        
+        Image image = ImageIO.read(getClass().getResource("/Window/Images/spacemind.jpg"));
+        JPanel back = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
+        
+        
+        String [] items = {"MandleBrot","other"};
+        JComboBox d = new JComboBox(items);
+        JButton b = new JButton("Iterate");
+        
+        back.setBounds(0,0,width,height);
+        d.setBounds(5, 5, 60, 40);
+        b.setBounds(100, 5, 60, 40);
+        
+        
+        add(back);
+        
+    }
+            
     public static void main(String[] args) throws IOException
     {
-        //BufferedImage image = ImageIO.read(new File("BigBrain.jpeg"));
-        //BackgroundPanel bgPanel = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
-        JFrame f=new JFrame();
+        
+        
+        Window f=new Window();
+        /*
         String [] items = {"MandleBrot","other"};
         JComboBox d=new JComboBox(items);//creating instance of JButton  
         JButton b = new JButton("Iterate");
-        BackgroundPanel back;
+        */
+
+        //BackgroundPanel back;
         
-        //back = new BackgroundPanel(, BackgroundPanel.SCALED, 1.0f, 0.5f);
+        //BufferedImage image = ImageIO.read(f.getClass().getResource("/Window/Images/BigBrain.jpeg"));
         
+        //BackgroundPanel bgPanel = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
+        /*
         f.add(d);
-        f.add(b);//adding button in JFrame
-        f.setSize(400,500);//400 width and 500 height  
-        f.setLayout(new FlowLayout());//using no layout managers  
+        f.add(b);*///adding button in JFrame
+        f.setSize(f.width,f.height);
+        f.setLayout(null);//using no layout managers  
         f.setVisible(true);//making the frame visible  
     }
     
