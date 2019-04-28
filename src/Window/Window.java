@@ -1,4 +1,4 @@
-package Window;
+ 
 
 
 
@@ -18,10 +18,10 @@ public class Window extends JFrame
         
         super();
         
-        System.out.println(getClass().getResource("/Window/Images/spacemind.jpg"));
+        System.out.println(getClass().getResource("/"));
         
         
-        Image image = ImageIO.read(getClass().getResource("/Window/Images/spacemind.jpg"));
+        Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
         JPanel back = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
         
         
