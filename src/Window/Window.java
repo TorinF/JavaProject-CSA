@@ -29,11 +29,11 @@ public class Window extends JFrame
         
         back.setBounds(0,0,width,height);
         d.setBounds(5, 5, 60, 40);
-        b.setBounds(100, 5, 60, 40);
+        b.setBounds(5, 5, 100, 40);
         
         
         add(back);
-        
+        add(b);
     }
             
     public static void main(String[] args) throws IOException
@@ -59,6 +59,7 @@ public class Window extends JFrame
         f.setLayout(null);//using no layout managers  
         f.setVisible(true);//making the frame visible  
     }
+    
     
 }
 
