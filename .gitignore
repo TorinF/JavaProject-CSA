@@ -1,2 +1,8 @@
 
 src/package.bluej
+nbproject
+test
+build.xml
+manifest.mf
+build
+/dist/
