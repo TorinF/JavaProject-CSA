@@ -3,9 +3,9 @@ import java.awt.Color;
 
 public class Fractal extends BufferedImage
 {
-    public Fractal(int width, int height, TYPE_BYTE_INDEXED)
+    public Fractal(int width, int height)
     {
-        super( width,  height,  );
+        super( width,  height,  TYPE_BYTE_INDEXED);
         drawFractal();
     }
     
