@@ -26,6 +26,7 @@ public class Window extends JFrame
         String [] items = {"MandleBrot","other"};
         JComboBox d = new JComboBox(items);
         JButton b = new JButton("Iterate");
+        
 
         back.setBounds(0,0,width,height);
         d.setBounds(5, 5, 60, 40);
