@@ -18,6 +18,8 @@ public class Window extends JFrame
 {
     final int height = 800;
     final int width = 1500;
+    final int fracwidth = 1000;
+    final int fracheight = 1000;
     private int iter = 0;
     public Window() throws IOException {
 
@@ -42,9 +44,10 @@ public class Window extends JFrame
         });
         b.setBounds(5, 5, 100, 40);
         
+        
         //Adds fractal window
-        FracWindow frac = new FracWindow(1000, 1000);
-        frac.setBounds(150, 0, 1000, 1000);
+        FracWindow frac = new FracWindow(fracwidth, fracheight);
+        frac.setBounds(150, 0, fracwidth, fracheight);
         
         add(frac);
         add(back);
@@ -53,27 +56,10 @@ public class Window extends JFrame
 
     public static void main(String[] args) throws IOException
     {
-
-
         Window f=new Window();
-        /*
-        String [] items = {"MandleBrot","other"};
-        JComboBox d=new JComboBox(items);//creating instance of JButton
-        JButton b = new JButton("Iterate");
-        */
-
-        //BackgroundPanel back;
-
-        //BufferedImage image = ImageIO.read(f.getClass().getResource("/Window/Images/BigBrain.jpeg"));
-
-        //BackgroundPanel bgPanel = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
-        /*
-        f.add(d);
-        f.add(b);*///adding button in JFrame
+        
         f.setSize(f.width,f.height);
         f.setLayout(null);//using no layout managers
         f.setVisible(true);//making the frame visible
     }
-
-
 }
