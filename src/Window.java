@@ -43,8 +43,8 @@ public class Window extends JFrame
         b.setBounds(5, 5, 100, 40);
         
         //Adds fractal window
-        FracWindow frac = new FracWindow(500, 400);
-        frac.setBounds(5, 60, 500, 400);
+        FracWindow frac = new FracWindow(1000, 1000);
+        frac.setBounds(150, 0, 1000, 1000);
         
         add(frac);
         add(back);
