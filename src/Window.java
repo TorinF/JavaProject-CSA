@@ -1,12 +1,16 @@
 
 
 
-
+//msc. classes
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.*;
+
+//swing classes
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 
@@ -19,27 +23,30 @@ public class Window extends JFrame
 
         super();
         
+        //Gets image from project file
         Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
+        
+        // Uses image to create background
         JPanel back = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
-
-
-        String [] items = {"MandleBrot","other"};
-        JComboBox d = new JComboBox(items);
+        back.setBounds(0,0,width,height);
+        
+        //Creates button & event listener
         JButton b = new JButton("Iterate");
         b.addActionListener(new ButtonPress() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                iter++;
                 System.out.println("iter = " + iter);
+                iter++;
             }
         });
-        
-        back.setBounds(0,0,width,height);
-        d.setBounds(5, 5, 60, 40);
         b.setBounds(5, 5, 100, 40);
-
-
+        
+        //Adds fractal window
+        FracWindow frac = new FracWindow(500, 400);
+        frac.setBounds(5, 60, 500, 400);
+        
+        add(frac);
         add(back);
         add(b);
     }

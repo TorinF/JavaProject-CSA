@@ -7,11 +7,25 @@ public class Fractal extends BufferedImage
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
         drawFractal();
+        drawBlank();
     }
-    
+    private void drawBlank()
+    {
+        for (int i = 0; i < getWidth(); i++) {
+            for (int j = 0; j < getHeight(); j++) {
+                setRGB(i,j, rgb2int(166,67,0));
+                if(j>392)
+                {
+                    setRGB(i,j, rgb2int(20,67,70));
+                }
+                
+            }
+        }
+    }
     /**
      * This draws a fractal using setRGB(int x,int y,int rgb)
-     * 
+     * we need to have a list of numbers with a length equal to the height or width
+     * ranging from the beguinning to end of the graph
      */
     private void drawFractal()
     {
