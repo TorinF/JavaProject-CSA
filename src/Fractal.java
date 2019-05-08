@@ -34,25 +34,10 @@ public class Fractal extends BufferedImage
                     x = xtemp;
                     iteration ++;
                 }
-<<<<<<< HEAD
                 
                 setRGB(i,j, rgb2int((int)(255*iteration/maxIteration),(int)(255*iteration/maxIteration),(int)(255*iteration/maxIteration)));
                 
                 
-=======
-                if(x*x + y*y <= 3)
-                {
-                    setRGB(i,j, rgb2int(iteration*15%255,15*iteration%255,40*iteration%255));
-                }
-                else if(x*x + y*y<10)
-                {
-                    setRGB(i,j, rgb2int(iteration*5,1*iteration,10*iteration));
-                }
-                else
-                {
-                    setRGB(i, j, rgb2int(0, 0, 0));
-                }
->>>>>>> 0f6618c8f4595fb6d58ca5b2a566b17017ea66fa
                 
             }
         }
