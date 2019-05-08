@@ -12,7 +12,7 @@ public class Fractal extends BufferedImage
     private void drawBlank()
     {
         int iteration = 0;
-        int maxIteration = 10;
+        int maxIteration = 20;
         double x0 = 0;
         double y0 = 0;
         double x = 0;
@@ -22,8 +22,8 @@ public class Fractal extends BufferedImage
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getHeight(); j++) {
                 //setRGB(i,j, rgb2int(166,67,0));
-                x0 = (double)(i-500)/250;
-                y0 = (double)(j-500)/250;
+                x0 = (double)(i-500)/350+.01;
+                y0 = (double)(j-500)/350+.01;
                 x = 0;
                 y = 0;
                 iteration = 0;
@@ -34,13 +34,13 @@ public class Fractal extends BufferedImage
                     x = xtemp;
                     iteration ++;
                 }
-                if(x*x + y*y <= 4)
+                if(x*x + y*y <= 3)
                 {
-                    setRGB(i,j, rgb2int(iteration*10,15*iteration,15*iteration));
+                    setRGB(i,j, rgb2int(iteration*2,7*iteration,5*iteration));
                 }
                 else if(x*x + y*y<10)
                 {
-                    setRGB(i,j, rgb2int(iteration*25,1*iteration,15*iteration));
+                    setRGB(i,j, rgb2int(iteration*5,1*iteration,10*iteration));
                 }
                 else
                 {
