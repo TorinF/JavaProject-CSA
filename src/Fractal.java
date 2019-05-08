@@ -42,7 +42,7 @@ public class Fractal extends BufferedImage
                     iteration ++;
                 }
                 
-                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration),(int)(255*iteration/maxIteration),(int)(255*iteration/maxIteration)));
+                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration),(int)(255-(255*iteration/maxIteration)),(int)(255*iteration/maxIteration)));
                 
                 
                 
