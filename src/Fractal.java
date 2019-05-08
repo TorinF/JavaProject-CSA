@@ -3,13 +3,20 @@ import java.awt.Color;
 
 public class Fractal extends BufferedImage
 {
+    double xs, xe, ys, ye;
+    
     public Fractal(int width, int height)
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
-        drawFractal(1);
+        drawFractal(1, -2, 2, -2, 2);
     }
-    public void drawFractal(int iter)
+    public void drawFractal(int iter, double xs,double xe,double ys,double ye)
     {
+        this.xe = xe;
+        this.xs = xs;
+        this.ye = ye;
+        this.ys = ys;
+        
         double iteration = 0;
         double maxIteration = (double) iter;
         double x0 = 0;
@@ -22,8 +29,8 @@ public class Fractal extends BufferedImage
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getHeight(); j++) {
                 //setRGB(i,j, rgb2int(166,67,0));
-                x0 = (double)(i-500)/350+.01;
-                y0 = (double)(j-500)/350+.01;
+                x0 = ((double)i*(xe-xs)/getWidth()) + xs;
+                y0 = ((double)j*(ye-ys)/getHeight()) + ys;
                 x = 0;
                 y = 0;
                 iteration = 0;

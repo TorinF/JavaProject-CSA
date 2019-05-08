@@ -16,11 +16,17 @@ import javax.swing.JPanel;
 
 public class Window extends JFrame
 {
-    final int height = 900;
-    final int width = 1700;
-    final int fracwidth = 1000;
-    final int fracheight = 1000;
+    final int height = 1000;
+    final int width = 1000;
+    final int fracwidth = 700;
+    final int fracheight = 700;
     private int iter = 0;
+    
+    //these values control the zoom/range for viewing
+    final double rangeXS = -2;
+    final double rangeXE = 2;
+    final double rangeYS = -2;
+    final double rangeYE = 2;
     public Window() throws IOException {
 
         super();
@@ -39,7 +45,7 @@ public class Window extends JFrame
         
         
         //Adds fractal window
-        FracWindow frac = new FracWindow(fracwidth, fracheight);
+        FracWindow frac = new FracWindow(fracwidth, fracheight, rangeXS, rangeXE, rangeYS, rangeYE);
         frac.setBounds(150, 0, fracwidth, fracheight);
         
         b.addActionListener(new ButtonPress() {

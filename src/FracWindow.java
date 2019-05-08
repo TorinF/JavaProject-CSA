@@ -11,19 +11,24 @@ import javax.swing.JPanel;
  */
 public class FracWindow extends JPanel {
 
+    private double xs, xe, ys, ye;
+    
     public void passiter(int iter) {
-        frac.drawFractal(iter);
+        frac.drawFractal(iter, xs, xe, ys, ye);
         repaint();
     }
     
     private final int width, height;
     private Fractal frac;
-    public FracWindow(int width, int height)
+    public FracWindow(int width, int height, double xs, double xe, double ys, double ye)
     {
-        
         // Make sure there's 0 whitespace between border of panel & image
         super(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        
+        this.xe = xe;
+        this.xs = xs;
+        this.ye = ye;
+        this.ys = ys;
+       
         this.width = width;
         this.height = height;
         
