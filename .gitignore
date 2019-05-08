@@ -6,4 +6,3 @@ build
 /dist/
 src/*.class
 
-*.class
