@@ -10,9 +10,14 @@ import javax.swing.JPanel;
  * @author torin
  */
 public class FracWindow extends JPanel {
+
+    public void passiter(int iter) {
+        frac.drawFractal(iter);
+        repaint();
+    }
     
     private final int width, height;
-    
+    private Fractal frac;
     public FracWindow(int width, int height)
     {
         
@@ -22,7 +27,7 @@ public class FracWindow extends JPanel {
         this.width = width;
         this.height = height;
         
-        Fractal frac = new Fractal(width,height);
+        frac = new Fractal(width,height);
         
         // Converts buffered image to ImageIcon
         // images are displayed with labels
