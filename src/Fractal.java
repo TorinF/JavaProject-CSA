@@ -6,7 +6,7 @@ public class Fractal extends BufferedImage
     public Fractal(int width, int height)
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
-        drawFractal(1);
+        drawFractal(2);
     }
     public void drawFractal(int iter)
     {
