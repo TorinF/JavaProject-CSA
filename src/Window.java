@@ -16,8 +16,8 @@ import javax.swing.JPanel;
 
 public class Window extends JFrame
 {
-    final int height = 800;
-    final int width = 1500;
+    final int height = 900;
+    final int width = 1700;
     final int fracwidth = 1000;
     final int fracheight = 1000;
     private int iter = 0;
