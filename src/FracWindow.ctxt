@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.target=FracWindow
 comment0.text=\r\n\r\n\ @author\ torin\r\n
-comment1.params=width\ height
-comment1.target=FracWindow(int,\ int)
-numComments=2
+comment1.params=iter
+comment1.target=void\ passiter(int)
+comment2.params=width\ height
+comment2.target=FracWindow(int,\ int)
+numComments=3

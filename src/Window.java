@@ -34,20 +34,23 @@ public class Window extends JFrame
         
         //Creates button & event listener
         JButton b = new JButton("Iterate");
-        b.addActionListener(new ButtonPress() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("iter = " + iter);
-                iter++;
-            }
-        });
+        
         b.setBounds(5, 5, 100, 40);
         
         
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
         frac.setBounds(150, 0, fracwidth, fracheight);
+        
+        b.addActionListener(new ButtonPress() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("iter = " + iter);
+                iter++;
+                frac.passiter(iter);
+            }
+        });
         
         add(frac);
         add(back);
