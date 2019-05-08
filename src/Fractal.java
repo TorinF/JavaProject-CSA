@@ -35,7 +35,7 @@ public class Fractal extends BufferedImage
                 }
                 if(x*x + y*y <= 3)
                 {
-                    setRGB(i,j, rgb2int(iteration*2,7*iteration,5*iteration));
+                    setRGB(i,j, rgb2int(iteration*15%255,15*iteration%255,40*iteration%255));
                 }
                 else if(x*x + y*y<10)
                 {
