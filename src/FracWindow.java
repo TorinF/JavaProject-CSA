@@ -73,11 +73,11 @@ public class FracWindow extends JPanel implements KeyListener {
         int key = ke.getKeyCode();
         switch(key)
         {
-	        case VK_SPACE:
-	            frac.zoomIn();
-	            frac.drawFractal(iter);
-	            repaint();
-	            break;
+            case VK_SPACE:
+                frac.zoomIn();
+                frac.drawFractal(iter);
+                repaint();
+                break;
             case VK_DOWN:
                 frac.moveUp();
                 frac.drawFractal(iter);

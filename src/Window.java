@@ -4,6 +4,7 @@
 //msc. classes
 import java.awt.Image;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
@@ -55,9 +56,7 @@ public class Window extends JFrame
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("iter = " + iter);
                 iter++;
-                
                 frac.passiter(iter);
             }
         });
@@ -68,8 +67,18 @@ public class Window extends JFrame
         addKeyListener(frac);
         add(frac);
         this.requestFocus();
+        
+        // This closes program when window is closed
+        addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent winEvt) {
+            
+            System.out.println("closing");
+            System.exit(0);
+        }
+    });
     }
-
+    
     public static void main(String[] args) throws IOException
     {
         Window f=new Window();
