@@ -83,6 +83,16 @@ public class Fractal extends BufferedImage
         ys -= range/SHIFTDIV;
         ye -= range/SHIFTDIV;
     }
+    public void zoomIn()
+    {
+    	double rangeX = Math.abs(xe - xs);
+    	double rangeY = Math.abs(ye - ys);
+    	xs += rangeX/SHIFTDIV;
+    	xe -= rangeX/SHIFTDIV;
+    	ys += rangeY/SHIFTDIV;
+    	ye -= rangeY/SHIFTDIV;
+    	
+    }
     
     /**
      * Turns three color values into a single int

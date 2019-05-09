@@ -4,11 +4,11 @@ import static java.awt.event.KeyEvent.VK_DOWN;
 import static java.awt.event.KeyEvent.VK_LEFT;
 import static java.awt.event.KeyEvent.VK_RIGHT;
 import static java.awt.event.KeyEvent.VK_UP;
+import static java.awt.event.KeyEvent.VK_SPACE;
 import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 
 /**
  *
@@ -56,6 +56,7 @@ public class FracWindow extends JPanel implements KeyListener {
     VK_DOWN
     VK_LEFT
     VK_RIGHT
+    VK_SPACE
     */
     
 
@@ -68,6 +69,11 @@ public class FracWindow extends JPanel implements KeyListener {
         int key = ke.getKeyCode();
         switch(key)
         {
+	        case VK_SPACE:
+	            frac.zoomIn();
+	            frac.drawFractal(iter);
+	            repaint();
+	            break;
             case VK_UP:
                 frac.moveUp();
                 frac.drawFractal(iter);
