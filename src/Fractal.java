@@ -18,12 +18,12 @@ public class Fractal extends BufferedImage
         this.ye = ye;
         this.ys = ys;
         
-        double iteration = 0;
+        double iteration;
         double maxIteration = (double) iter;
-        double x0 = 0;
-        double y0 = 0;
-        double x = 0;
-        double y = 0;
+        double x0;
+        double y0;
+        double x;
+        double y;
         double xtemp;
         
         
