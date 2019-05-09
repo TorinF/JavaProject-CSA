@@ -78,22 +78,22 @@ public class FracWindow extends JPanel implements KeyListener {
 	            frac.drawFractal(iter);
 	            repaint();
 	            break;
-            case VK_UP:
+            case VK_DOWN:
                 frac.moveUp();
                 frac.drawFractal(iter);
                 repaint();
                 break;
-            case VK_DOWN:
+            case VK_UP:
                 frac.moveDown();
                 frac.drawFractal(iter);
                 repaint();
                 break;
-            case VK_LEFT:
+            case VK_RIGHT:
                 frac.moveLeft();
                 frac.drawFractal(iter);
                 repaint();
                 break;
-            case VK_RIGHT:
+            case VK_LEFT:
                 frac.moveRight();
                 frac.drawFractal(iter);
                 repaint();
