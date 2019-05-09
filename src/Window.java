@@ -61,9 +61,12 @@ public class Window extends JFrame
             }
         });
         
-        add(frac);
+        
         add(back);
         add(b);
+        addKeyListener(frac);
+        add(frac);
+        
     }
 
     public static void main(String[] args) throws IOException

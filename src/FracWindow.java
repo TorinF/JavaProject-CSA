@@ -64,9 +64,7 @@ public class FracWindow extends JPanel implements KeyListener {
 
 
     @Override
-    public void keyTyped(java.awt.event.KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void keyTyped(java.awt.event.KeyEvent ke) {}
 
     @Override
     public void keyPressed(java.awt.event.KeyEvent ke) {
@@ -95,7 +93,5 @@ public class FracWindow extends JPanel implements KeyListener {
     }
 
     @Override
-    public void keyReleased(java.awt.event.KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void keyReleased(java.awt.event.KeyEvent ke) {}
 }

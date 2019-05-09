@@ -1,7 +1,7 @@
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 
-public final class Fractal extends BufferedImage
+public class Fractal extends BufferedImage
 {
     double xs, xe, ys, ye;
     public static final int SHIFTDIV = 8;
@@ -19,10 +19,6 @@ public final class Fractal extends BufferedImage
     }
     public void drawFractal(int iter, double xs,double xe,double ys,double ye)
     {
-        this.xe = xe;
-        this.xs = xs;
-        this.ye = ye;
-        this.ys = ys;
         
         double iteration;
         double maxIteration = (double) iter;
@@ -69,7 +65,7 @@ public final class Fractal extends BufferedImage
     public void moveLeft()
     {
         double range = Math.abs(xe - xs);
-        xs -= range/SHIFTDIV;
+        xs -= 1+range/SHIFTDIV;
         xe -= range/SHIFTDIV;
     }
     public void moveUp()
