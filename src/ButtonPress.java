@@ -3,9 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This does nothing but creates a class that abides by the ActionListener 
+ * interface, it's buttonpress is overwritten in window so it's unused
  */
 
 /**
@@ -16,7 +15,7 @@ public class ButtonPress implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");  
     }
     
 }

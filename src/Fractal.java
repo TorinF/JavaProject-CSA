@@ -4,11 +4,12 @@ import java.awt.Color;
 public class Fractal extends BufferedImage
 {
     double xs, xe, ys, ye;
-    
+    public static final int SHIFTDIV = 8;
+    public static final int STARTITER = 2;
     public Fractal(int width, int height)
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
-        drawFractal(1, -2, 2, -2, 2);
+        drawFractal(2, -2, 2, -2, 2);
     }
     public void drawFractal(int iter, double xs,double xe,double ys,double ye)
     {
@@ -42,7 +43,7 @@ public class Fractal extends BufferedImage
                     iteration ++;
                 }
                 
-                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration),(int)(255-(255*iteration/maxIteration)),(int)(255*iteration/maxIteration)));
+                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration),(int)(255-(255*iteration/maxIteration)),(int)(255 - 255*iteration/maxIteration)));
                 
                 
                 
@@ -50,15 +51,47 @@ public class Fractal extends BufferedImage
         }
     }
     
+    /* These methods will shift the x and y ranges
+    if we add a zoom feature it would be useful to make the graph 
+    shift proportional to how zoomed in it is*/
+    public void moveRight()
+    {
+        double range = Math.abs(xe - xs);
+        xs += range/SHIFTDIV;
+        xe += range/SHIFTDIV;
+    }
+    public void moveLeft()
+    {
+        double range = Math.abs(xe - xs);
+        xs -= range/SHIFTDIV;
+        xe -= range/SHIFTDIV;
+    }
+    public void moveUp()
+    {
+        double range = Math.abs(ye - ys);
+        ys += range/SHIFTDIV;
+        ye += range/SHIFTDIV;
+    }
+    public void moveDown()
+    {
+        double range = Math.abs(ye - ys);
+        ys -= range/SHIFTDIV;
+        ye -= range/SHIFTDIV;
+    }
+    
+    /**
+     * Turns three color values into a single int
+     * that is used by the computer
+     * should be optimized
+     * @param red
+     * @param green
+     * @param blue
+     * @return 
+     */
     public static int rgb2int(int red, int green, int blue)
     {
         return new Color(red, green, blue).getRGB();
         
     }
     
-    public static void main()
-    {
-        Fractal test = new Fractal(600,400);
-        System.out.println(test.getColorModel());
-    }
 }

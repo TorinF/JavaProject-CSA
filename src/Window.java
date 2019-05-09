@@ -16,13 +16,13 @@ import javax.swing.JPanel;
 
 public class Window extends JFrame
 {
-    final int height = 1000;
+    final int height = 750;
     final int width = 1000;
     final int fracwidth = 700;
     final int fracheight = 700;
-    private int iter = 0;
+    private int iter = Fractal.STARTITER;
     
-    //these values control the zoom/range for viewing
+    //these values control the initial zoom/range for viewing
     final double rangeXS = -2;
     final double rangeXE = 2;
     final double rangeYS = -2;
@@ -48,6 +48,7 @@ public class Window extends JFrame
         FracWindow frac = new FracWindow(fracwidth, fracheight, rangeXS, rangeXE, rangeYS, rangeYE);
         frac.setBounds(150, 0, fracwidth, fracheight);
         
+        /* This calls the passiter function on the FracWindow which also redraws it */
         b.addActionListener(new ButtonPress() {
 
             @Override
@@ -68,7 +69,7 @@ public class Window extends JFrame
         Window f=new Window();
         
         f.setSize(f.width,f.height);
-        f.setLayout(null);//using no layout managers
-        f.setVisible(true);//making the frame visible
+        f.setLayout(null);// using no layout managers, just use set bounds
+        f.setVisible(true);// making the frame visible
     }
 }
