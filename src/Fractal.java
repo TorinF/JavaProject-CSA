@@ -9,7 +9,7 @@ public class Fractal extends BufferedImage
     public Fractal(int width, int height)
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
-        drawFractal(2, -2, 2, -2, 2);
+        drawFractal(STARTITER, -2, 2, -2, 2);
     }
     public void drawFractal(int iter, double xs,double xe,double ys,double ye)
     {
