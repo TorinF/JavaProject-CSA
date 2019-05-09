@@ -23,9 +23,9 @@ public class Window extends JFrame
     private int iter = Fractal.STARTITER;
     
     //these values control the initial zoom/range for viewing
-    final double rangeXS = -2;
-    final double rangeXE = 2;
-    final double rangeYS = -2;
+    final double rangeXS = -0;
+    final double rangeXE = 1;
+    final double rangeYS = -1;
     final double rangeYE = 2;
     public Window() throws IOException {
 
