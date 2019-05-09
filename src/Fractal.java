@@ -88,7 +88,7 @@ public final class Fractal extends BufferedImage
     /**
      * Turns three color values into a single int
      * that is used by the computer
-     * should be optimized
+     * should be optimized later
      * @param red
      * @param green
      * @param blue
