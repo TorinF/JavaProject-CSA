@@ -45,7 +45,7 @@ public class Window extends JFrame
         
         
         //Adds fractal window
-        FracWindow frac = new FracWindow(fracwidth, fracheight, rangeXS, rangeXE, rangeYS, rangeYE);
+        FracWindow frac = new FracWindow(fracwidth, fracheight);
         frac.setBounds(150, 0, fracwidth, fracheight);
         
         /* This calls the passiter function on the FracWindow which also redraws it */

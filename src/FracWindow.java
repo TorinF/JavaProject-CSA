@@ -16,21 +16,16 @@ import javax.swing.JPanel;
  */
 public class FracWindow extends JPanel implements KeyListener {
 
-    private double xs, xe, ys, ye;
     
     
     
     private final int width, height;
     private Fractal frac;
     
-    public FracWindow(int width, int height, double xs, double xe, double ys, double ye)
+    public FracWindow(int width, int height)
     {
         // Make sure there's 0 whitespace between border of panel & image
         super(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        this.xe = xe;
-        this.xs = xs;
-        this.ye = ye;
-        this.ys = ys;
        
         this.width = width;
         this.height = height;
