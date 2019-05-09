@@ -67,7 +67,7 @@ public class Window extends JFrame
         add(b);
         addKeyListener(frac);
         add(frac);
-        
+        this.requestFocus();
     }
 
     public static void main(String[] args) throws IOException

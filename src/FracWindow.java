@@ -21,6 +21,7 @@ public class FracWindow extends JPanel implements KeyListener {
     
     private final int width, height;
     private Fractal frac;
+    private int iter = Fractal.STARTITER;
     
     public FracWindow(int width, int height)
     {
@@ -46,6 +47,8 @@ public class FracWindow extends JPanel implements KeyListener {
     public void passiter(int iter) {
         frac.drawFractal(iter);
         repaint();
+        this.iter = iter;
+        this.requestFocus();
     }
 
     /* This will use key codes:
@@ -63,24 +66,26 @@ public class FracWindow extends JPanel implements KeyListener {
     @Override
     public void keyPressed(java.awt.event.KeyEvent ke) {
         int key = ke.getKeyCode();
-        System.out.println("sdfsdafasd");
         switch(key)
         {
             case VK_UP:
                 frac.moveUp();
+                frac.drawFractal(iter);
                 repaint();
                 break;
             case VK_DOWN:
                 frac.moveDown();
+                frac.drawFractal(iter);
                 repaint();
                 break;
             case VK_LEFT:
                 frac.moveLeft();
+                frac.drawFractal(iter);
                 repaint();
                 break;
             case VK_RIGHT:
-                System.out.println("sfsdfsdfsd");
                 frac.moveRight();
+                frac.drawFractal(iter);
                 repaint();
                 break;
             default:

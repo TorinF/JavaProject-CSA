@@ -62,14 +62,14 @@ public class Fractal extends BufferedImage
     public void moveRight()
     {
         double range = Math.abs(xe - xs);
-        xs += range/SHIFTDIV;
-        xe += range/SHIFTDIV;
+        xs -= range/SHIFTDIV;
+        xe -= range/SHIFTDIV;
     }
     public void moveLeft()
     {
         double range = Math.abs(xe - xs);
-        xs -= range/SHIFTDIV;
-        xe -= range/SHIFTDIV;
+        xs += range/SHIFTDIV;
+        xe += range/SHIFTDIV;
     }
     public void moveUp()
     {
