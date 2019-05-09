@@ -1,5 +1,11 @@
 //Use IDE to manage what packages are used
 import java.awt.FlowLayout;
+import java.awt.event.KeyEvent.*;
+import static java.awt.event.KeyEvent.VK_DOWN;
+import static java.awt.event.KeyEvent.VK_LEFT;
+import static java.awt.event.KeyEvent.VK_RIGHT;
+import static java.awt.event.KeyEvent.VK_UP;
+import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -9,17 +15,15 @@ import javax.swing.JPanel;
  *
  * @author torin
  */
-public class FracWindow extends JPanel {
+public class FracWindow extends JPanel implements KeyListener {
 
     private double xs, xe, ys, ye;
     
-    public void passiter(int iter) {
-        frac.drawFractal(iter, xs, xe, ys, ye);
-        repaint();
-    }
+    
     
     private final int width, height;
     private Fractal frac;
+    
     public FracWindow(int width, int height, double xs, double xe, double ys, double ye)
     {
         // Make sure there's 0 whitespace between border of panel & image
@@ -40,12 +44,58 @@ public class FracWindow extends JPanel {
         
         // Adds single image to cover panel
         add(l);
+        
+        // Adds keylistener
+        addKeyListener(this);
     }
-    //public void reDraw()
-    /**
-     * We will need to redraw the fractal at some point
-     * it won't be 60 fps but we can refresh the image by calling a redraw on the
-     * Fractal then reassigning the JLabel to a new ImageIcon
-     * maybe the ImageIcon will automatically refresh.
-     */
+    
+    public void passiter(int iter) {
+        frac.drawFractal(iter, xs, xe, ys, ye);
+        repaint();
+    }
+
+    /* This will use key codes:
+    VK_UP
+    VK_DOWN
+    VK_LEFT
+    VK_RIGHT
+    */
+    
+
+
+    @Override
+    public void keyTyped(java.awt.event.KeyEvent ke) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(java.awt.event.KeyEvent ke) {
+        int key = ke.getKeyCode();
+        switch(key)
+        {
+            case VK_UP:
+                frac.moveUp();
+                repaint();
+                break;
+            case VK_DOWN:
+                frac.moveDown();
+                repaint();
+                break;
+            case VK_LEFT:
+                frac.moveLeft();
+                repaint();
+                break;
+            case VK_RIGHT:
+                frac.moveRight();
+                repaint();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void keyReleased(java.awt.event.KeyEvent ke) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

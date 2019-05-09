@@ -50,7 +50,9 @@ public class Window extends JFrame
         
         /* This calls the passiter function on the FracWindow which also redraws it */
         b.addActionListener(new ButtonPress() {
-
+            /* This creates an anonomous class that overrides the action 
+            performed method*/
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("iter = " + iter);

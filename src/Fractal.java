@@ -1,11 +1,17 @@
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 
-public class Fractal extends BufferedImage
+public final class Fractal extends BufferedImage
 {
     double xs, xe, ys, ye;
     public static final int SHIFTDIV = 8;
     public static final int STARTITER = 2;
+
+    /**
+     * Creates a buffered image then runs fractal
+     * @param width 
+     * @param height
+     */
     public Fractal(int width, int height)
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
