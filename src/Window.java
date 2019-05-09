@@ -57,6 +57,7 @@ public class Window extends JFrame
             public void actionPerformed(ActionEvent e) {
                 System.out.println("iter = " + iter);
                 iter++;
+                
                 frac.passiter(iter);
             }
         });
