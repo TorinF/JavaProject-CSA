@@ -48,7 +48,7 @@ public class Fractal extends BufferedImage
                     iteration ++;
                 }
                 
-                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration),(int)(255-(255*iteration/maxIteration)),(int)(255 - 255*iteration/maxIteration)));
+                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration)));
                 
                 
                 
@@ -103,10 +103,37 @@ public class Fractal extends BufferedImage
      * @param blue
      * @return 
      */
-    public static int rgb2int(int red, int green, int blue)
+    public static int rgb2int(int c)
     {
-        return new Color(red, green, blue).getRGB();
-        
+    	
+    	
+    	if(c < 85)
+    	{
+    		return new Color(c*3, 0, 0).getRGB();
+    	}
+    	else if(c < 170)
+    	{
+    		return new Color(255, (c - 85)*3, 0).getRGB();
+    	}
+    	else 
+    	{
+    		return new Color(255, 255, (c - 170)*3).getRGB();
+    	}
+    		
+    	
+    	
+        //return new Color(red, green, blue).getRGB();
+        /**
+         * int DIV = 8;
+    	for(int i = 1; i <= DIV; i++)
+    	{
+    		if(c < (i*255/DIV) && c > (i-1)*255/DIV)
+    		{
+    			return Color(c*8, 0, 0).getRGB()
+    		}
+    	}
+         * 
+         */
     }
     
 }
