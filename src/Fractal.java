@@ -9,6 +9,7 @@ public class Fractal extends BufferedImage
     double ye = 2;
     public static final int SHIFTDIV = 12;
     public static final int STARTITER = 2;
+    public int iter;
     
 
     /**
@@ -19,9 +20,10 @@ public class Fractal extends BufferedImage
     public Fractal(int width, int height)
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
-        drawFractal(STARTITER);
+        iter = this.STARTITER;
+        drawFractal();
     }
-    public void drawFractal(int iter)
+    public void drawFractal()
     {
         
         double iteration;
@@ -84,6 +86,8 @@ public class Fractal extends BufferedImage
         ys -= range/SHIFTDIV;
         ye -= range/SHIFTDIV;
     }
+    
+    // Zooms in by reducing ranges
     public void zoomIn()
     {
     	double rangeX = Math.abs(xe - xs);
@@ -93,6 +97,21 @@ public class Fractal extends BufferedImage
     	ys += rangeY/SHIFTDIV;
     	ye -= rangeY/SHIFTDIV;
     	
+    }
+    
+    // Iterate functions to change the iteration
+    
+    public void iterate()
+    {
+        iter++;
+    }
+    public void iterate(int add)
+    {
+        iter+=add;
+    }
+    public void setIteration(int iteration)
+    {
+        this.iter = iteration;
     }
     
     /**

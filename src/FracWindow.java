@@ -45,10 +45,10 @@ public class FracWindow extends JPanel implements KeyListener {
         addKeyListener(this);
     }
     
-    public void passiter(int iter) {
-        frac.drawFractal(iter);
+    public void passiter() {
+        frac.iterate();
+        frac.drawFractal();
         repaint();
-        this.iter = iter;
         this.requestFocus();
     }
 
@@ -80,27 +80,27 @@ public class FracWindow extends JPanel implements KeyListener {
                 break;
             case VK_SPACE:
                 frac.zoomIn();
-                frac.drawFractal(iter);
+                frac.drawFractal();
                 repaint();
                 break;
             case VK_DOWN:
                 frac.moveUp();
-                frac.drawFractal(iter);
+                frac.drawFractal();
                 repaint();
                 break;
             case VK_UP:
                 frac.moveDown();
-                frac.drawFractal(iter);
+                frac.drawFractal();
                 repaint();
                 break;
             case VK_RIGHT:
                 frac.moveLeft();
-                frac.drawFractal(iter);
+                frac.drawFractal();
                 repaint();
                 break;
             case VK_LEFT:
                 frac.moveRight();
-                frac.drawFractal(iter);
+                frac.drawFractal();
                 repaint();
                 break;
             default:

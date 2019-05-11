@@ -61,8 +61,7 @@ public class Window extends JFrame
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                iter++;
-                frac.passiter(iter);
+                frac.passiter();
             }
         });
         
