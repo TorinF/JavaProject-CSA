@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 public class Window extends JFrame
 {
     final int height = 750;
-    final int width = 1000;
+    final int width = 1200;
     final int fracwidth = 700;
     final int fracheight = 700;
     private int iter = Fractal.STARTITER;
@@ -52,7 +52,7 @@ public class Window extends JFrame
         
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
-        frac.setBounds(150, 0, fracwidth, fracheight);
+        frac.setBounds(350, 0, fracwidth, fracheight);
         
         /* This calls the passiter function on the FracWindow which also redraws it */
         b.addActionListener(new ButtonPress() {
