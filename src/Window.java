@@ -5,18 +5,14 @@
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowEvent;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 
 //swing classes
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 
 
-public class Window extends JFrame
+public class Window extends BackgroundPanel
 {
     final int height = 750;
     final int width = 1200;
@@ -29,16 +25,18 @@ public class Window extends JFrame
     final double rangeXE = 1;
     final double rangeYS = -1;
     final double rangeYE = 2;
-    public Window() throws IOException {
+    
+    // layout
+    FlowLayout lay;
+    
+    public Window(int width, int height, java.awt.Image image) throws IOException {
 
-        super();
+        super((Image)image, BackgroundPanel.SCALED, 0.0f, 0.0f);
         
-        //Gets image from project file
-        Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
+        lay = new FlowLayout(FlowLayout.LEADING);
         
-        // Uses image to create background
-        JPanel back = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
-        back.setBounds(0,0,width,height);
+        setLayout(lay);
+        
         
         //Creates button & event listener
         JButton b = new JButton("Iterate");
@@ -66,29 +64,10 @@ public class Window extends JFrame
         });
         
         add(left);
-        add(back);
         add(b);
         addKeyListener(frac);
         add(frac);
         this.requestFocus();
         
-        // This closes program when window is closed
-        addWindowListener(new java.awt.event.WindowAdapter() {
-        @Override
-        public void windowClosing(WindowEvent winEvt) {
-            
-            System.out.println("closing");
-            System.exit(0);
-        }
-    });
-    }
-    
-    public static void main(String[] args) throws IOException
-    {
-        Window f=new Window();
-        
-        f.setSize(f.width,f.height);
-        f.setLayout(null);// using no layout managers, just use set bounds
-        f.setVisible(true);// making the frame visible
     }
 }
