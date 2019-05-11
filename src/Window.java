@@ -69,5 +69,7 @@ public class Window extends BackgroundPanel
         add(frac);
         this.requestFocus();
         
+        this.setVisible(true);
+        
     }
 }
