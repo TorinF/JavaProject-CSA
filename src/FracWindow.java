@@ -80,6 +80,11 @@ public class FracWindow extends JPanel implements KeyListener {
                 frac.drawFractal();
                 repaint();
                 break;
+            case  VK_Z:
+                frac.zoomOut();
+                frac.drawFractal();
+                repaint();
+                break;
             case VK_SPACE:
                 frac.zoomIn();
                 frac.drawFractal();

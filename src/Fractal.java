@@ -99,6 +99,15 @@ public class Fractal extends BufferedImage
     	
     }
     
+    public void zoomOut()
+    {
+        double rangeX = Math.abs(xe - xs);
+    	double rangeY = Math.abs(ye - ys);
+    	xs -= rangeX/SHIFTDIV;
+    	xe += rangeX/SHIFTDIV;
+    	ys -= rangeY/SHIFTDIV;
+    	ye += rangeY/SHIFTDIV;
+    }
     // Iterate functions to change the iteration
     
     public void iterate()

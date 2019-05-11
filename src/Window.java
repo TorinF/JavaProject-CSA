@@ -46,7 +46,7 @@ public class Window extends JFrame
         b.setBounds(5, 5, 100, 40);
         
         LeftPanel left = new LeftPanel();
-        left.setBounds(5,100,300,150);
+        left.setBounds(5,100,300,250);
         
         
         
