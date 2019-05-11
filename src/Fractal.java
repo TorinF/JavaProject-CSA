@@ -9,6 +9,7 @@ public class Fractal extends BufferedImage
     double ye = 2;
     public static final int SHIFTDIV = 12;
     public static final int STARTITER = 2;
+    
 
     /**
      * Creates a buffered image then runs fractal
