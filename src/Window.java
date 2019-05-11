@@ -14,8 +14,6 @@ import javax.swing.JButton;
 
 public class Window extends BackgroundPanel
 {
-    final int height = 750;
-    final int width = 1200;
     final int fracwidth = 700;
     final int fracheight = 700;
     private int iter = Fractal.STARTITER;
@@ -31,12 +29,13 @@ public class Window extends BackgroundPanel
     
     public Window(int width, int height, java.awt.Image image) throws IOException {
 
-        super((Image)image, BackgroundPanel.SCALED, 0.0f, 0.0f);
+        super(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
         
         lay = new FlowLayout(FlowLayout.LEADING);
         
         setLayout(lay);
         
+        this.setSize(width, height);
         
         //Creates button & event listener
         JButton b = new JButton("Iterate");
@@ -59,6 +58,7 @@ public class Window extends BackgroundPanel
             
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println("this");
                 frac.passiter();
             }
         });
@@ -68,8 +68,6 @@ public class Window extends BackgroundPanel
         addKeyListener(frac);
         add(frac);
         this.requestFocus();
-        
-        this.setVisible(true);
         
     }
 }

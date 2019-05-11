@@ -19,8 +19,8 @@ import javax.swing.JFrame;
 public class Frame extends JFrame{
     
     // Instance vars
-    public static int height;
-    public static int width;
+    public static int height = 700;
+    public static int width = 1000;
     private FlowLayout lay;
     
     
@@ -30,13 +30,14 @@ public class Frame extends JFrame{
         
         lay = new FlowLayout(FlowLayout.LEADING);
         
-        setLayout(lay);
+        setLayout(null);
         
         Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
         
         
         
         Window win = new Window(width, height, image);
+        win.setBounds(0,0,width,height);
         add(win);
         
         // This closes program when window is closed
