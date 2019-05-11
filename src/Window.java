@@ -2,6 +2,7 @@
 
 
 //msc. classes
+import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
