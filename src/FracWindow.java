@@ -1,11 +1,7 @@
 //Use IDE to manage what packages are used
 import java.awt.FlowLayout;
-import static java.awt.event.KeyEvent.VK_C;
-import static java.awt.event.KeyEvent.VK_DOWN;
-import static java.awt.event.KeyEvent.VK_LEFT;
-import static java.awt.event.KeyEvent.VK_RIGHT;
-import static java.awt.event.KeyEvent.VK_UP;
-import static java.awt.event.KeyEvent.VK_SPACE;
+
+import static java.awt.event.KeyEvent.*;
 import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -74,9 +70,15 @@ public class FracWindow extends JPanel implements KeyListener {
         int key = ke.getKeyCode();
         switch(key)
         {
-            //for later
             case VK_C:
-                
+                frac.iterate();
+                frac.drawFractal();
+                repaint();
+                break;
+            case VK_X:
+                frac.iterate(5);
+                frac.drawFractal();
+                repaint();
                 break;
             case VK_SPACE:
                 frac.zoomIn();
