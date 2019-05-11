@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 //swing classes
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -44,6 +45,10 @@ public class Window extends JFrame
         
         b.setBounds(5, 5, 100, 40);
         
+        LeftPanel left = new LeftPanel();
+        left.setBounds(5,500,300,150);
+        
+        
         
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
@@ -61,7 +66,7 @@ public class Window extends JFrame
             }
         });
         
-        
+        add(left);
         add(back);
         add(b);
         addKeyListener(frac);

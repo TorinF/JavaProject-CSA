@@ -97,7 +97,6 @@ public class Fractal extends BufferedImage
     /**
      * Turns three color values into a single int
      * that is used by the computer
-     * should be optimized later
      * @param red
      * @param green
      * @param blue
@@ -134,6 +133,13 @@ public class Fractal extends BufferedImage
     	}
          * 
          */
+    }
+    public int rgb2intq(int red, int green, int blue)
+    {
+        int rgb = red;
+        rgb = (rgb << 8) + green;
+        rgb = (rgb << 8) + blue;
+        return rgb;
     }
     
 }
