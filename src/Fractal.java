@@ -108,15 +108,15 @@ public class Fractal extends BufferedImage
     	
     	if(c < 85)
     	{
-    		return new Color(c*3, 0, 0).getRGB();
+    		return rgb2intq(c*3, 0, 0);
     	}
     	else if(c < 170)
     	{
-    		return new Color(255, (c - 85)*3, 0).getRGB();
+    		return rgb2intq(255, (c - 85)*3, 0);
     	}
     	else 
     	{
-    		return new Color(255, 255, (c - 170)*3).getRGB();
+    		return rgb2intq(255, 255, (c - 170)*3);
     	}
     		
     	
@@ -134,7 +134,10 @@ public class Fractal extends BufferedImage
          * 
          */
     }
-    public int rgb2intq(int red, int green, int blue)
+    
+    // It may be quicker to do this way instead of creating a whole new
+    // object that has to be cleaned by the garbage collector
+    public static int rgb2intq(int red, int green, int blue)
     {
         int rgb = red;
         rgb = (rgb << 8) + green;
