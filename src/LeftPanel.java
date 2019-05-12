@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.io.IOException;
@@ -41,6 +42,7 @@ public class LeftPanel extends JPanel
         JButton b = new JButton("Iterate");
         b.setPreferredSize(new Dimension(30, 40));
         
+        b.setAlignmentX(Component.LEFT_ALIGNMENT);
         
         
         /* This calls the passiter function on the FracWindow which also redraws it */

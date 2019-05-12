@@ -43,12 +43,9 @@ public class Window extends BackgroundPanel
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
         
-        
-        
-        
         LeftPanel left = new LeftPanel();
         left.setMinimumSize(new Dimension(200, height));
-        left.setAlignmentY(1);
+        
         ((JButton)left.getComponent(0)).addActionListener(new ButtonPress() {
             /* This creates an anonomous class that overrides the action 
             performed method*/
