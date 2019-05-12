@@ -19,16 +19,13 @@ import javax.swing.JFrame;
 public class Frame extends JFrame{
     
     // Instance vars
-    public static int height = 700;
+    public static int height = 800;
     public static int width = 1500;
-    private FlowLayout lay;
-    
     
     public Frame(int width, int height) throws IOException
     {
         super();
         
-        lay = new FlowLayout(FlowLayout.LEADING);
         
         setLayout(null);
         

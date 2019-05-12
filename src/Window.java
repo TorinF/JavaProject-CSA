@@ -2,6 +2,7 @@
 
 
 //msc. classes
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -31,8 +32,8 @@ public class Window extends BackgroundPanel
 
         super(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
         
-        lay = new FlowLayout(FlowLayout.LEADING);
-        
+        lay = new FlowLayout(FlowLayout.LEFT);
+        this.setAlignmentY(1);
         setLayout(lay);
         
         this.setSize(width, height);
@@ -41,27 +42,24 @@ public class Window extends BackgroundPanel
         
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
-        frac.setBounds(350, 0, fracwidth, fracheight);
         
         
         
         
         LeftPanel left = new LeftPanel();
-        left.setBounds(5,100,300,250);
-        
+        left.setMinimumSize(new Dimension(200, height));
+        left.setAlignmentY(1);
         ((JButton)left.getComponent(0)).addActionListener(new ButtonPress() {
             /* This creates an anonomous class that overrides the action 
             performed method*/
             
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("this");
                 frac.passiter();
             }
-        });;
+        });
         
-        
-        
+        left.setPreferredSize(new Dimension(300, height));
         
         add(left);
         addKeyListener(frac);
