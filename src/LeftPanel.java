@@ -38,10 +38,11 @@ public class LeftPanel extends JPanel
         help.setPage(file);
         help.setOpaque(false);
         
-        //this.setOpaque(false);
+        
         JButton b = new JButton("Iterate");
         b.setPreferredSize(new Dimension(30, 40));
         
+        //I'm trying to make the button go left 
         b.setAlignmentX(Component.LEFT_ALIGNMENT);
         
         
