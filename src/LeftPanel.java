@@ -9,6 +9,7 @@ import static javax.swing.BoxLayout.Y_AXIS;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /* It's time to start using a layout manager,
 it's just a lot more professional and makes adding
@@ -43,7 +44,7 @@ public class LeftPanel extends JPanel
         b.setPreferredSize(new Dimension(30, 40));
         
         //I'm trying to make the button go left 
-        b.setAlignmentX(Component.LEFT_ALIGNMENT);
+        b.setHorizontalAlignment(SwingConstants.LEFT);
         
         
         /* This calls the passiter function on the FracWindow which also redraws it */
