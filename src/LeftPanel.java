@@ -1,7 +1,9 @@
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
+import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 
@@ -22,7 +24,7 @@ public class LeftPanel extends JPanel
     {
         
         super();
-        lay = new FlowLayout(FlowLayout.LEADING);
+        lay = new FlowLayout(FlowLayout.CENTER);
         setLayout(lay);
         
         
@@ -33,11 +35,16 @@ public class LeftPanel extends JPanel
         help.setOpaque(false);
         
         //this.setOpaque(false);
+        JButton b = new JButton("Iterate");
         
-
-    setBackground( new Color(0, 0, 0, 100) );
         
-    add(help);
+        
+        /* This calls the passiter function on the FracWindow which also redraws it */
+        
+        
+        setBackground( new Color(0, 0, 0, 100) );
+        add(b);
+        add(help);
     
     }
 }

@@ -20,7 +20,7 @@ public class Frame extends JFrame{
     
     // Instance vars
     public static int height = 700;
-    public static int width = 1000;
+    public static int width = 1500;
     private FlowLayout lay;
     
     

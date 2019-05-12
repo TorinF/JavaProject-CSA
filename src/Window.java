@@ -37,22 +37,19 @@ public class Window extends BackgroundPanel
         
         this.setSize(width, height);
         
-        //Creates button & event listener
-        JButton b = new JButton("Iterate");
-        
-        b.setBounds(5, 5, 100, 40);
-        
-        LeftPanel left = new LeftPanel();
-        left.setBounds(5,100,300,250);
-        
         
         
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
         frac.setBounds(350, 0, fracwidth, fracheight);
         
-        /* This calls the passiter function on the FracWindow which also redraws it */
-        b.addActionListener(new ButtonPress() {
+        
+        
+        
+        LeftPanel left = new LeftPanel();
+        left.setBounds(5,100,300,250);
+        
+        ((JButton)left.getComponent(0)).addActionListener(new ButtonPress() {
             /* This creates an anonomous class that overrides the action 
             performed method*/
             
@@ -61,10 +58,12 @@ public class Window extends BackgroundPanel
                 System.out.println("this");
                 frac.passiter();
             }
-        });
+        });;
+        
+        
+        
         
         add(left);
-        add(b);
         addKeyListener(frac);
         add(frac);
         this.requestFocus();

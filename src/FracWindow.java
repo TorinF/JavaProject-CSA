@@ -48,10 +48,7 @@ public class FracWindow extends JPanel implements KeyListener {
         this.requestFocus();
     }
 
-    public Fractal getFrac()
-    {
-        return frac;
-    }
+    
     /* This will use key codes:
     VK_UP
     VK_DOWN
