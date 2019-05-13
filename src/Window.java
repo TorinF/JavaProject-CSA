@@ -45,7 +45,6 @@ public class Window extends BackgroundPanel
         FracWindow frac = new FracWindow(fracwidth, fracheight);
         
         LeftPanel left = new LeftPanel();
-        left.setMinimumSize(new Dimension(200, height));
         
         ((JButton)left.getComponent(0)).addActionListener(new ButtonPress() {
             /* This creates an anonomous class that overrides the action 
