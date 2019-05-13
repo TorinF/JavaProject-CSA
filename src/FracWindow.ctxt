@@ -1,8 +1,15 @@
 #BlueJ class context
 comment0.target=FracWindow
 comment0.text=\r\n\r\n\ @author\ torin\r\n
-comment1.params=iter
-comment1.target=void\ passiter(int)
-comment2.params=width\ height\ xs\ xe\ ys\ ye
-comment2.target=FracWindow(int,\ int,\ double,\ double,\ double,\ double)
-numComments=3
+comment1.params=width\ height
+comment1.target=FracWindow(int,\ int)
+comment2.params=
+comment2.target=void\ passiter()
+comment3.params=ke
+comment3.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment3.text=\ This\ will\ use\ key\ codes\:\r\n\ \ \ \ VK_UP\r\n\ \ \ \ VK_DOWN\r\n\ \ \ \ VK_LEFT\r\n\ \ \ \ VK_RIGHT\r\n\ \ \ \ VK_SPACE\r\n
+comment4.params=ke
+comment4.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment5.params=ke
+comment5.target=void\ keyReleased(java.awt.event.KeyEvent)
+numComments=6
