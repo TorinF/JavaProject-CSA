@@ -35,7 +35,7 @@ public class LeftPanel extends JPanel
         //this.setOpaque(false);
         
 
-    setBackground( new Color(0, 0, 0, 100) );
+    setBackground( new Color(0, 0, 0, 255) );
         
     add(help);
     

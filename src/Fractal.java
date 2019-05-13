@@ -19,7 +19,7 @@ public class Fractal extends BufferedImage
      */
     public Fractal(int width, int height)
     {
-        super( width,  height,  TYPE_BYTE_INDEXED );
+        super( width,  height,  TYPE_INT_RGB );
         iter = this.STARTITER;
         drawFractal();
     }
@@ -51,7 +51,7 @@ public class Fractal extends BufferedImage
                     iteration ++;
                 }
                 
-                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration)));
+                setRGB(i,j, rgb2int((255*iteration/maxIteration)));
                 
                 
                 
@@ -131,21 +131,21 @@ public class Fractal extends BufferedImage
      * @param blue
      * @return 
      */
-    public static int rgb2int(int c)
+    public static int rgb2int(double c)
     {
     	
     	
     	if(c < 85)
     	{
-    		return rgb2intq(c*3, 0, 0);
+    		return rgb2intq((int)c*3, 0, 0);
     	}
     	else if(c < 170)
     	{
-    		return rgb2intq(255, (c - 85)*3, 0);
+    		return rgb2intq(255,(int) (c - 85)*3, 0);
     	}
     	else 
     	{
-    		return rgb2intq(255, 255, (c - 170)*3);
+    		return rgb2intq(255, 255, (int)(c - 170)*3);
     	}
     		
     	
