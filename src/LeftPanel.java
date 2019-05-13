@@ -2,6 +2,8 @@
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.io.IOException;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 
@@ -17,12 +19,12 @@ stuff easier
  */
 public class LeftPanel extends JPanel
 {
-    private FlowLayout lay;
+    private BoxLayout lay;
     public LeftPanel() throws IOException
     {
         
         super();
-        lay = new FlowLayout(FlowLayout.LEADING);
+        lay = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(lay);
         
         
@@ -35,9 +37,12 @@ public class LeftPanel extends JPanel
         //this.setOpaque(false);
         
 
-    setBackground( new Color(0, 0, 0, 100) );
+        setBackground( new Color(0, 0, 0, 100) );
+        JButton b = new JButton("g");
+        b.setAlignmentX(0);
         
-    add(help);
+        add(b);
+        add(help);
     
     }
 }
