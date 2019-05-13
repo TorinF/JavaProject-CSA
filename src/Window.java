@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import javax.swing.BoxLayout;
 
 //swing classes
 import javax.swing.JButton;
@@ -26,13 +27,13 @@ public class Window extends BackgroundPanel
     final double rangeYE = 2;
     
     // layout
-    FlowLayout lay;
+    BoxLayout lay;
     
     public Window(int width, int height, java.awt.Image image) throws IOException {
 
         super(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
         
-        lay = new FlowLayout(FlowLayout.LEFT);
+        lay = new BoxLayout(this, BoxLayout.X_AXIS);
         this.setAlignmentY(1);
         setLayout(lay);
         
