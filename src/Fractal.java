@@ -7,9 +7,12 @@ public class Fractal extends BufferedImage
     double xe = 2;
     double ys = -2;
     double ye = 2;
+    private int colorSetting;
     public static final int SHIFTDIV = 12;
     public static final int STARTITER = 2;
     public int iter;
+    public static final int SUNSET_SHERBERT = 0;
+    public static final int HOT_IRON = 1;
     
 
     /**
@@ -21,7 +24,9 @@ public class Fractal extends BufferedImage
     {
         super( width,  height,  TYPE_BYTE_INDEXED );
         iter = this.STARTITER;
+        colorSetting = Fractal.SUNSET_SHERBERT;
         drawFractal();
+        
     }
     public void drawFractal()
     {
@@ -51,8 +56,12 @@ public class Fractal extends BufferedImage
                     iteration ++;
                 }
                 
-               // setRGB(i,j, rgb2int((255*iteration/maxIteration)));
-                setRGB(i,j, Color.HSBtoRGB((float)(iteration/maxIteration),(float)0.7,(float)0.7));
+                // setRGB(i,j, rgb2int((255*iteration/maxIteration)));
+                if(colorSetting == Fractal.SUNSET_SHERBERT)
+                    setRGB(i,j, Color.HSBtoRGB((float)(iteration/maxIteration),(float)0.7,(float)0.7));
+                
+                else if(colorSetting == Fractal.HOT_IRON)
+                    setRGB(i, j, rgb2int(iteration/maxIteration*255));
                 
                 
             }
@@ -131,7 +140,7 @@ public class Fractal extends BufferedImage
      * @param blue
      * @return 
      */
-    /**public static int rgb2int(double c)
+    public static int rgb2int(double c)
     {
     	
     	
@@ -163,6 +172,6 @@ public class Fractal extends BufferedImage
         return rgb;
         
     }
-    */
+    
     
 }
