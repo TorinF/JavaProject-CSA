@@ -1,4 +1,5 @@
 import java.awt.image.BufferedImage;
+import java.awt.Color;
 
 public class Fractal extends BufferedImage
 {
@@ -14,7 +15,7 @@ public class Fractal extends BufferedImage
     /**
      * Creates a buffered image then runs fractal
      * @param width 
-     * @param height
+     * @param height 
      */
     public Fractal(int width, int height)
     {
@@ -50,8 +51,8 @@ public class Fractal extends BufferedImage
                     iteration ++;
                 }
                 
-                setRGB(i,j, rgb2int((int)(255*iteration/maxIteration)));
-                
+               // setRGB(i,j, rgb2int((255*iteration/maxIteration)));
+                setRGB(i,j, Color.HSBtoRGB((float)(iteration/maxIteration),(float)0.7,(float)0.7));
                 
                 
             }
@@ -130,37 +131,26 @@ public class Fractal extends BufferedImage
      * @param blue
      * @return 
      */
-    public static int rgb2int(int c)
+    /**public static int rgb2int(double c)
     {
     	
     	
     	if(c < 85)
     	{
-    		return rgb2intq(c*3, 0, 0);
+    		return rgb2intq((int)(c*3), 0, 0);
     	}
     	else if(c < 170)
     	{
-    		return rgb2intq(255, (c - 85)*3, 0);
+    		return rgb2intq(255,(int) ((c - 85)*3), 0);
     	}
     	else 
     	{
-    		return rgb2intq(255, 255, (c - 170)*3);
+    		return rgb2intq(255, 255,(int) ((c - 170)*3));
     	}
     		
     	
     	
-        //return new Color(red, green, blue).getRGB();
-        /**
-         * int DIV = 8;
-    	for(int i = 1; i <= DIV; i++)
-    	{
-    		if(c < (i*255/DIV) && c > (i-1)*255/DIV)
-    		{
-    			return Color(c*8, 0, 0).getRGB()
-    		}
-    	}
-         * 
-         */
+       
     }
     
     // It may be quicker to do this way instead of creating a whole new
@@ -171,6 +161,8 @@ public class Fractal extends BufferedImage
         rgb = (rgb << 8) + green;
         rgb = (rgb << 8) + blue;
         return rgb;
+        
     }
+    */
     
 }

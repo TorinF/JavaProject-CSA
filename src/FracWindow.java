@@ -15,7 +15,7 @@ public class FracWindow extends JPanel implements KeyListener {
 
     
     
-    
+     
     private final int width, height;
     private Fractal frac;
     private int iter = Fractal.STARTITER;
