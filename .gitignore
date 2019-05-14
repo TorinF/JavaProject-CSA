@@ -4,5 +4,4 @@ manifest.mf
 build
 src/*.class
 */*.class
-dist
-bin
+
