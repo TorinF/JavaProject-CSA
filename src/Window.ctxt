@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=Window
-comment1.params=
-comment1.target=Window()
+comment1.params=width\ height\ image
+comment1.target=Window(int,\ int,\ java.awt.Image)
 comment2.params=e
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment3.params=args
-comment3.target=void\ main(java.lang.String[])
-numComments=4
+comment2.text=\ This\ creates\ an\ anonomous\ class\ that\ overrides\ the\ action\ \r\nperformed\ method
+numComments=3

@@ -32,7 +32,8 @@ public class LeftPanel extends JPanel
         
         setLayout(lay);
         
-        
+        this.setMaximumSize(new Dimension(300, Frame.height));
+        this.setSize(300, Frame.height);
         JEditorPane help = new JEditorPane();
         help.setEditable(false);
         java.net.URL file = getClass().getResource("directions.html");
@@ -41,16 +42,16 @@ public class LeftPanel extends JPanel
         
         
         JButton b = new JButton("Iterate");
-        b.setPreferredSize(new Dimension(30, 40));
+        b.setPreferredSize(new Dimension(100, 40));
         
         //I'm trying to make the button go left 
-        b.setHorizontalAlignment(SwingConstants.LEFT);
+        b.setAlignmentX(SwingConstants.LEFT);
         
         
         /* This calls the passiter function on the FracWindow which also redraws it */
         
         
-        setBackground( new Color(0, 0, 0, 100) );
+        this.setBackground( new Color(200, 0, 0) );
         add(b);
         add(help);
     
