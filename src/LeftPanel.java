@@ -33,12 +33,12 @@ public class LeftPanel extends JPanel
         setLayout(lay);
         
         this.setMaximumSize(new Dimension(300, Frame.height));
-        this.setSize(300, Frame.height);
+        this.setSize(300, Frame.height-100);
         JEditorPane help = new JEditorPane();
         help.setEditable(false);
         java.net.URL file = getClass().getResource("directions.html");
         help.setPage(file);
-        help.setOpaque(false);
+        //help.setOpaque(false);
         
         
         JButton b = new JButton("Iterate");
@@ -51,7 +51,7 @@ public class LeftPanel extends JPanel
         /* This calls the passiter function on the FracWindow which also redraws it */
         
         
-        this.setBackground( new Color(200, 0, 0) );
+        this.setBackground( new Color(0, 0, 0,100) );
         add(b);
         add(help);
     
