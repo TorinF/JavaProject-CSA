@@ -4,8 +4,7 @@ manifest.mf
 build
 *.form
 dist
-
-<<<<<<< HEAD
+/src/bin
 
 # Compiled class file
 *.class
@@ -30,6 +29,7 @@ dist
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-=======
+
+
 /bin/
->>>>>>> fef9e828e1193a278e2feb1e69a87d7afb541a08
+
