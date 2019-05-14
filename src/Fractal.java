@@ -7,12 +7,14 @@ public class Fractal extends BufferedImage
     double xe = 2;
     double ys = -2;
     double ye = 2;
-    private int colorSetting;
+    
+    public int iter;
     public static final int SHIFTDIV = 12;
     public static final int STARTITER = 2;
-    public int iter;
-    public static final int SUNSET_SHERBERT = 0;
-    public static final int HOT_IRON = 1;
+    
+    private byte colorSetting;
+    public static final byte SUNSET_SHERBERT = 0;
+    public static final byte HOT_IRON = 1;
     
 
     /**
@@ -117,6 +119,7 @@ public class Fractal extends BufferedImage
     	ys -= rangeY/SHIFTDIV;
     	ye += rangeY/SHIFTDIV;
     }
+    
     // Iterate functions to change the iteration
     
     public void iterate()
@@ -132,6 +135,17 @@ public class Fractal extends BufferedImage
         this.iter = iteration;
     }
     
+    // Change color setting
+    
+    public void setColorSetting(byte color)
+    {
+        this.colorSetting = color;
+    }
+    
+    public byte getColorSetting()
+    {
+        return colorSetting;
+    }
     /**
      * Turns three color values into a single int
      * that is used by the computer
@@ -156,10 +170,7 @@ public class Fractal extends BufferedImage
     	{
     		return rgb2intq(255, 255,(int) ((c - 170)*3));
     	}
-    		
     	
-    	
-       
     }
     
     // It may be quicker to do this way instead of creating a whole new
