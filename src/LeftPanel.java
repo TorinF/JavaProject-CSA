@@ -36,16 +36,11 @@ public class LeftPanel extends JPanel
         
         //this.setOpaque(false);
         
-
-<<<<<<< HEAD
         setBackground( new Color(0, 0, 0, 100) );
         JButton b = new JButton("g");
         b.setAlignmentX(0);
-=======
-    setBackground( new Color(0, 0, 0, 255) );
->>>>>>> 846917876651bba4471c4a26737bc3b97d925f70
         
-        add(b);
+        //add(b);
         add(help);
     
     }
