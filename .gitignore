@@ -4,4 +4,4 @@ manifest.mf
 build
 src/*.class
 */*.class
-
+*.form
