@@ -3,6 +3,6 @@ build.xml
 manifest.mf
 build
 src/*.class
-
-/dist/
-/bin/
+*/*.class
+dist
+bin
