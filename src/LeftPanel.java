@@ -33,7 +33,7 @@ public class LeftPanel extends JPanel
         setLayout(lay);
         
         this.setMaximumSize(new Dimension(300, Frame.height));
-        this.setSize(300, Frame.height-100);
+        //this.setSize(300, Frame.height);
         JEditorPane help = new JEditorPane();
         help.setEditable(false);
         java.net.URL file = getClass().getResource("directions.html");
