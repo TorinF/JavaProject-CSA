@@ -10,6 +10,7 @@ public class Fractal extends BufferedImage
     public static final int SHIFTDIV = 12;
     public static final int STARTITER = 2;
     public int iter;
+    public static boolean toggle = true;
     
 
     /**
@@ -50,8 +51,8 @@ public class Fractal extends BufferedImage
                     x = xtemp;
                     iteration ++;
                 }
-                
-                setRGB(i,j, rgb2int((255*iteration/maxIteration)));
+                float f =(float) (iteration/maxIteration);
+                setColor(toggle, i, j, f);
                 
                 
                 
@@ -172,6 +173,18 @@ public class Fractal extends BufferedImage
         rgb = (rgb << 8) + green;
         rgb = (rgb << 8) + blue;
         return rgb;
+    }
+    
+    public void setColor(boolean t, int i, int j, float fl)
+    {
+        if(t)
+        {
+            setRGB(i,j, rgb2int((255*fl)));
+        }
+        else
+        {
+            setRGB(i,j, Color.HSBtoRGB(fl, (float) 1, 1-fl));
+        }
     }
     
 }

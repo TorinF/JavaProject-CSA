@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
@@ -68,6 +69,25 @@ public class Window extends JFrame
         
         JComboBox comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
         comb.setBounds(5, 50, 70, 40); 
+        
+        comb.setEditable(true);
+        comb.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                // Get the source of the component, which is our combo
+                // box.
+                JComboBox comb = (JComboBox) event.getSource();
+
+               
+                Object selected = comb.getSelectedItem();
+                if(selected.equals("Sunset"))
+                {
+                    Fractal.toggle = true;
+                }
+                else
+                {
+                    Fractal.toggle = false;
+                }
+            }});
         
         add(comb);
         add(left);
