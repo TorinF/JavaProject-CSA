@@ -38,7 +38,7 @@ public class LeftPanel extends JPanel
         help.setEditable(false);
         java.net.URL file = getClass().getResource("directions.html");
         help.setPage(file);
-        help.setOpaque(false);
+        //help.setOpaque(false);
         
         
         JButton b = new JButton("Iterate");
