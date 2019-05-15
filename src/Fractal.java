@@ -50,9 +50,9 @@ public class Fractal extends BufferedImage
                     x = xtemp;
                     iteration ++;
                 }
-                
+                float f = (float)(iteration/(maxIteration));
                // setRGB(i,j, rgb2int((255*iteration/maxIteration)));
-                setRGB(i,j, Color.HSBtoRGB((float)(iteration/maxIteration),(float)0.7,(float)0.7));
+                setRGB(i,j, Color.HSBtoRGB(f,(float)1,(float)1-f));
                 
                 
             }
