@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JComboBox;
 
 
 
@@ -65,6 +66,10 @@ public class Window extends JFrame
             }
         });
         
+        JComboBox comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
+        comb.setBounds(5, 50, 70, 40); 
+        
+        add(comb);
         add(left);
         add(back);
         add(b);
