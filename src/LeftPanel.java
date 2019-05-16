@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.io.IOException;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import static javax.swing.BoxLayout.Y_AXIS;
 import javax.swing.JButton;
@@ -32,13 +33,12 @@ public class LeftPanel extends JPanel
         
         setLayout(lay);
         
-        this.setMaximumSize(new Dimension(300, Frame.height));
-        //this.setSize(300, Frame.height);
+        this.setMaximumSize(new Dimension(400, Frame.height));
         JEditorPane help = new JEditorPane();
         help.setEditable(false);
         java.net.URL file = getClass().getResource("directions.html");
         help.setPage(file);
-        //help.setOpaque(false);
+        help.setOpaque(false);
         
         
         JButton b = new JButton("Iterate");
@@ -50,7 +50,7 @@ public class LeftPanel extends JPanel
         
         /* This calls the passiter function on the FracWindow which also redraws it */
         
-        
+        this.setBorder(BorderFactory.createLineBorder(Color.black));
         this.setBackground( new Color(0, 0, 0,100) );
         add(b);
         add(help);
