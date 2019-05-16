@@ -11,6 +11,7 @@ import javax.swing.BoxLayout;
 
 //swing classes
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 
 
@@ -46,7 +47,7 @@ public class Window extends BackgroundPanel
         
         LeftPanel left = new LeftPanel();
         
-        ((JButton)left.getComponent(0)).addActionListener(new ButtonPress() {
+        left.getIterButton().addActionListener(new ButtonPress() {
             /* This creates an anonomous class that overrides the action 
             performed method*/
             
