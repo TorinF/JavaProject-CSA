@@ -48,12 +48,10 @@ public class LeftPanel extends JPanel
         b.setAlignmentX(SwingConstants.LEFT);
         
         
-        /* This calls the passiter function on the FracWindow which also redraws it */
-        
         this.setBorder(BorderFactory.createLineBorder(Color.black));
+        help.setBorder(BorderFactory.createLineBorder(Color.black));
         this.setBackground( new Color(0, 0, 0,100) );
         add(b);
         add(help);
-    
     }
 }
