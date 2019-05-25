@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.io.IOException;
 import javax.swing.BorderFactory;
@@ -53,7 +54,12 @@ public class LeftPanel extends JPanel
         b.setAlignmentX(SwingConstants.LEFT);
         
         JPanel topPan = new JPanel();
-        topPan.setLayout(new BoxLayout(topPan, BoxLayout.X_AXIS));
+        
+        GridLayout grid2 = new GridLayout(1,0);
+        grid2.setHgap(10);
+        
+        
+        topPan.setLayout(grid2);
         topPan.setMaximumSize(new Dimension(this.getMaximumSize().width,300));
         topPan.setMinimumSize(new Dimension(this.getMaximumSize().width, 40));
         topPan.setAlignmentX(SwingConstants.LEFT);
