@@ -3,6 +3,11 @@ import java.awt.FlowLayout;
 
 import static java.awt.event.KeyEvent.*;
 import java.awt.event.KeyListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Properties;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,8 +24,9 @@ public class FracWindow extends JPanel implements KeyListener {
     private final int width, height;
     private Fractal frac;
     private int iter = Fractal.STARTITER;
+    private int up, down, left, right, zoom, zoomOut, iterate, iteratex5;
     
-    public FracWindow(int width, int height)
+    public FracWindow(int width, int height) throws IOException
     {
         // Make sure there's 0 whitespace between border of panel & image
         super(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -37,8 +43,25 @@ public class FracWindow extends JPanel implements KeyListener {
         // Adds single image to cover panel
         add(l);
         
+        // Load keybindings
+        
+        
         // Adds keylistener
         addKeyListener(this);
+        setProps();
+        
+    }
+    
+    private void setProps() throws FileNotFoundException, IOException
+    {
+        Properties props = new Properties();
+        String path = getClass().getResource("options.properties").getPath();
+        props.load(new FileInputStream(path));
+        System.out.println(props.values()); 
+        System.out.println("props.elements() = " + props.elements());
+        Enumeration<Object> elements = props.elements();
+        
+        
     }
     
     public void passiter() {
