@@ -177,7 +177,7 @@ public class Fractal extends BufferedImage
     
     public void setColor(boolean t, int i, int j, float fl)
     {
-        if(t)
+        if(!t)
         {
             setRGB(i,j, rgb2int((255*fl)));
         }
