@@ -24,7 +24,7 @@ public class FracWindow extends JPanel implements KeyListener {
     private final int width, height;
     private Fractal frac;
     private int iter = Fractal.STARTITER;
-    private int up, down, left, right, zoom, zoomOut, iterate, iteratex5;
+    private final int up, down, left, right, zoom, zoomOut, iterate, iteratex5;
     
     public FracWindow(int width, int height) throws IOException
     {
@@ -46,13 +46,33 @@ public class FracWindow extends JPanel implements KeyListener {
         // Load keybindings
         
         
+        
+        
         // Adds keylistener
         addKeyListener(this);
-        setProps();
         
+        Properties props = new Properties();
+        String path = getClass().getResource("options.properties").getPath();
+        props.load(new FileInputStream(path));
+        System.out.println(props.values()); 
+        System.out.println("props.elements() = " + props.elements());
+       // Enumeration<Object> elements = props.elements();
+        
+        up = Integer.parseInt(props.getProperty("up"));
+        down = Integer.parseInt(props.getProperty("down"));
+        left = Integer.parseInt(props.getProperty("left"));
+        right = Integer.parseInt(props.getProperty("right"));
+        
+        zoom=Integer.parseInt(props.getProperty("zoom"));
+        
+        zoomOut= Integer.parseInt(props.getProperty("zoomOut"));
+        
+        iterate= Integer.parseInt(props.getProperty("iterate"));
+        
+        iteratex5 = Integer.parseInt(props.getProperty("iteratex5"));
     }
     
-    private void setProps() throws FileNotFoundException, IOException
+    /*private void setProps() throws FileNotFoundException, IOException
     {
         Properties props = new Properties();
         String path = getClass().getResource("options.properties").getPath();
@@ -61,8 +81,18 @@ public class FracWindow extends JPanel implements KeyListener {
         System.out.println("props.elements() = " + props.elements());
         Enumeration<Object> elements = props.elements();
         
+        up = Integer.parseInt(props.getProperty("up"));
+        down = Integer.parseInt(props.getProperty("down"));
+        left = Integer.parseInt(props.getProperty("left"));
+        right = Integer.parseInt(props.getProperty("right"));
         
-    }
+        zoom=Integer.parseInt(props.getProperty("zoom"));
+        
+        zoomOut= Integer.parseInt(props.getProperty("zoomOut"));
+        
+        iterate= Integer.parseInt(props.getProperty("iterate"));
+        
+    }*/
     
     public void passiter() {
         frac.iterate();
@@ -103,7 +133,7 @@ public class FracWindow extends JPanel implements KeyListener {
                 frac.drawFractal();
                 repaint();
                 break;
-            case  VK_Z:
+            case VK_Z:
                 frac.zoomOut();
                 frac.drawFractal();
                 repaint();
