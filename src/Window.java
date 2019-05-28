@@ -68,7 +68,7 @@ public class Window extends JFrame
         });
         
         JComboBox comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
-        comb.setBounds(5, 50, 70, 40); 
+        comb.setBounds(5, 50, 80, 40); 
         
         comb.setEditable(true);
         comb.addActionListener(new ActionListener() {
