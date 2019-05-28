@@ -25,7 +25,7 @@ public class FracWindow extends JPanel implements KeyListener {
     private Fractal frac;
     private int iter = Fractal.STARTITER;
     private final int up, down, left, right, zoom, zoomOut, iterate, iteratex5;
-    
+    private Properties props;
     public FracWindow(int width, int height) throws IOException
     {
         // Make sure there's 0 whitespace between border of panel & image
@@ -51,25 +51,26 @@ public class FracWindow extends JPanel implements KeyListener {
         // Adds keylistener
         addKeyListener(this);
         
-        Properties props = new Properties();
+        props = new Properties();
         String path = getClass().getResource("options.properties").getPath();
         props.load(new FileInputStream(path));
         System.out.println(props.values()); 
         System.out.println("props.elements() = " + props.elements());
-       // Enumeration<Object> elements = props.elements();
-        
+        Enumeration<Object> elements = props.elements();
+
         up = Integer.parseInt(props.getProperty("up"));
         down = Integer.parseInt(props.getProperty("down"));
         left = Integer.parseInt(props.getProperty("left"));
         right = Integer.parseInt(props.getProperty("right"));
         
         zoom=Integer.parseInt(props.getProperty("zoom"));
-        
         zoomOut= Integer.parseInt(props.getProperty("zoomOut"));
         
         iterate= Integer.parseInt(props.getProperty("iterate"));
         
         iteratex5 = Integer.parseInt(props.getProperty("iteratex5"));
+        
+        
     }
     
     /*private void setProps() throws FileNotFoundException, IOException
@@ -121,53 +122,47 @@ public class FracWindow extends JPanel implements KeyListener {
     @Override
     public void keyPressed(java.awt.event.KeyEvent ke) {
         int key = ke.getKeyCode();
-        switch(key)
-        {
-            case VK_C:
-                frac.iterate();
-                frac.drawFractal();
-                repaint();
-                break;
-            case VK_X:
+	if(key==Integer.parseInt(props.getProperty("iteratex5"))) {
                 frac.iterate(5);
                 frac.drawFractal();
                 repaint();
-                break;
-            case VK_Z:
+        }
+        else if(key==Integer.parseInt(props.getProperty("iterate"))) {
+            frac.iterate(1);
+            frac.drawFractal();
+            repaint();
+        }
+	else if(key==Integer.parseInt(props.getProperty("zoomOut"))) {
                 frac.zoomOut();
                 frac.drawFractal();
                 repaint();
-                break;
-            case VK_SPACE:
+	}
+        else if(key==Integer.parseInt(props.getProperty("zoom"))) {
                 frac.zoomIn();
                 frac.drawFractal();
                 repaint();
-                break;
-            case VK_DOWN:
+	}
+        else if(key==Integer.parseInt(props.getProperty("up"))) {
                 frac.moveUp();
                 frac.drawFractal();
                 repaint();
-                break;
-            case VK_UP:
+	}
+	else if(key==Integer.parseInt(props.getProperty("down"))) {
                 frac.moveDown();
                 frac.drawFractal();
                 repaint();
-                break;
-            case VK_RIGHT:
+	}
+        else if(key==Integer.parseInt(props.getProperty("left"))) {
                 frac.moveLeft();
                 frac.drawFractal();
                 repaint();
-                break;
-            case VK_LEFT:
+        }       
+        else if(key==Integer.parseInt(props.getProperty("right"))) {
                 frac.moveRight();
                 frac.drawFractal();
                 repaint();
-                break;
-            default:
-                break;
-        }
+	}
     }
-
     @Override
     public void keyReleased(java.awt.event.KeyEvent ke) {}
 }
