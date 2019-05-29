@@ -1,3 +1,5 @@
+package app.src;
+
 //Use IDE to manage what packages are used
 import java.awt.FlowLayout;
 
@@ -52,11 +54,9 @@ public class FracWindow extends JPanel implements KeyListener {
         addKeyListener(this);
         
         props = new Properties();
-        String path = getClass().getResource("options.properties").getPath();
+        String path = getClass().getResource("../../resources/options.properties").getPath();
+        System.out.println("path = " + path);
         props.load(new FileInputStream(path));
-        System.out.println(props.values()); 
-        System.out.println("props.elements() = " + props.elements());
-        Enumeration<Object> elements = props.elements();
 
         up = Integer.parseInt(props.getProperty("up"));
         down = Integer.parseInt(props.getProperty("down"));

@@ -1,3 +1,5 @@
+package app.src;
+
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 

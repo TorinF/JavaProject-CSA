@@ -1,3 +1,5 @@
+package app.src;
+
 
 
 
@@ -8,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 
 //swing classes
@@ -36,7 +39,9 @@ public class Window extends JFrame
         super();
         
         //Gets image from project file
-        Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
+        URL path = getClass().getResource("../../resources/spacemind.jpg");
+        System.out.println("path = " + path);
+        Image image = ImageIO.read(path);
         
         // Uses image to create background
         JPanel back = new BackgroundPanel(image, BackgroundPanel.SCALED, 0.0f, 0.0f);
