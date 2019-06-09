@@ -39,7 +39,7 @@ public class Window extends JFrame
         super();
         
         //Gets image from project file
-        URL path = getClass().getResource("../../resources/spacemind.jpg");
+        URL path = getClass().getResource("../resources/spacemind.jpg");
         System.out.println("path = " + path);
         Image image = ImageIO.read(path);
         

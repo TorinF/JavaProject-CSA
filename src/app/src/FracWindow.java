@@ -54,7 +54,8 @@ public class FracWindow extends JPanel implements KeyListener {
         addKeyListener(this);
         
         props = new Properties();
-        String path = getClass().getResource("../../resources/options.properties").getPath();
+        System.out.println(getClass().getResource("./").getPath());
+        String path = getClass().getResource("../resources/options.properties").getPath();
         System.out.println("path = " + path);
         props.load(new FileInputStream(path));
 
