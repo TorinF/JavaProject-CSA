@@ -1,3 +1,5 @@
+package app.src;
+
 
 import java.awt.FlowLayout;
 import java.awt.Image;
@@ -18,9 +20,10 @@ import javax.swing.JFrame;
  */
 public class Frame extends JFrame{
     
-    // Instance vars
+    // size vars
     public static int height = 800;
     public static int width = 1500;
+    
     
     public Frame(int width, int height) throws IOException
     {
@@ -29,7 +32,7 @@ public class Frame extends JFrame{
         
         setLayout(null);
         
-        Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
+        Image image = ImageIO.read(getClass().getResource("/app/Resources/spacemind.jpg"));
         
         
         
@@ -47,6 +50,7 @@ public class Frame extends JFrame{
             }
         });
     }
+    
     public static void main(String[] args) throws IOException
     {
         Frame f=new Frame(width, height);

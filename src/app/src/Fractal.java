@@ -1,3 +1,5 @@
+package app.src;
+
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 
@@ -64,8 +66,6 @@ public class Fractal extends BufferedImage
                 
                 else if(colorSetting == Fractal.HOT_IRON)
                     setRGB(i, j, rgb2int(iteration/maxIteration*255));
-                
-                
             }
         }
     }

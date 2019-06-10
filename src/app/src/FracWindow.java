@@ -1,3 +1,5 @@
+package app.src;
+
 //Use IDE to manage what packages are used
 import java.awt.FlowLayout;
 
