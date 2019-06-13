@@ -1,4 +1,4 @@
-package app.src;
+package app.Fractal;
 
 //Use IDE to manage what packages are used
 import java.awt.FlowLayout;

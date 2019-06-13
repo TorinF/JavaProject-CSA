@@ -1,4 +1,4 @@
-package app.src;
+package app.Fractal;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
