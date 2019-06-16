@@ -1,11 +1,15 @@
-package app.window;
+package window;
 
 
+import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.Box;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /*
@@ -33,11 +37,15 @@ public class Frame extends JFrame{
         
         Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
         
+        Container pane = getContentPane();
         
-        
+//        pane.add(Box.createHorizontalStrut(20), BorderLayout.LINE_START);
+//        pane.add(Box.createHorizontalStrut(20), BorderLayout.LINE_END);
+//        pane.add(Box.createVerticalStrut(20), BorderLayout.PAGE_START);
+//        pane.add(new JButton("hujygugyuguy"), BorderLayout.PAGE_END);
+//        
         Window win = new Window(width, height, image);
-        win.setBounds(0,0,width,height);
-        add(win);
+        pane.add(win, BorderLayout.CENTER);
         
         // This closes program when window is closed
         addWindowListener(new java.awt.event.WindowAdapter() {

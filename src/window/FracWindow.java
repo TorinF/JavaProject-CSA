@@ -1,6 +1,8 @@
-package app.window;
+package window;
 
 //Use IDE to manage what packages are used
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import static java.awt.event.KeyEvent.*;
@@ -25,10 +27,13 @@ public class FracWindow extends JPanel implements KeyListener {
     public FracWindow(int width, int height)
     {
         // Make sure there's 0 whitespace between border of panel & image
-        super(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        super(new FlowLayout(FlowLayout.LEADING, 0, 0));
        
         this.width = width;
         this.height = height;
+        
+        this.setBackground(new Color(0,0,0,0));
+        this.setPreferredSize(new Dimension(width, height));
         
         frac = new Fractal(width,height);
         

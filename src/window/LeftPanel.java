@@ -1,4 +1,4 @@
-package app.window;
+package window;
 
 
 import java.awt.Color;
