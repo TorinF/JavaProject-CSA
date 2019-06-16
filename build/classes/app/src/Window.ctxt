@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Window
+comment1.params=
+comment1.target=Window()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\ This\ creates\ an\ anonomous\ class\ that\ overrides\ the\ action\ \r\nperformed\ method
+comment3.params=event
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=winEvt
+comment4.target=void\ windowClosing(java.awt.event.WindowEvent)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6
