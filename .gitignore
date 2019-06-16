@@ -1,7 +1,5 @@
 test
-build.xml
 manifest.mf
-build
 *.form
 dist
 /src/bin
