@@ -79,6 +79,7 @@ public class Window extends BackgroundPanel
         
         left.setPreferredSize(new Dimension(300, height));
         
+        
         pane.add(left);
         addKeyListener(frac);
         pane.add(frac);
