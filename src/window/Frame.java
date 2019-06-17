@@ -3,13 +3,10 @@ package window;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.Box;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /*
