@@ -2,12 +2,13 @@ test
 manifest.mf
 *.form
 dist
-dist/MandleBrot_Lite.jar
 /src/bin
-build/classes
 # Compiled class file
 *.class
-
+build
+nbproject
+build.xml
+**/.project
 # Log file
 *.log
 
