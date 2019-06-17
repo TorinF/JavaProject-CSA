@@ -2,6 +2,7 @@ test
 manifest.mf
 *.form
 dist
+dist/MandleBrot_Lite.jar
 /src/bin
 build/classes
 # Compiled class file
