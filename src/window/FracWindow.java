@@ -31,8 +31,7 @@ public class FracWindow extends JPanel {
     private Fractal frac;
     private int iter = Fractal.STARTITER;
     
-    public FracWindow(int width, int height)
-    {
+    public FracWindow(int width, int height) {
         // Make sure there's 0 whitespace between border of panel & image
         super(new FlowLayout(FlowLayout.LEADING, 0, 0));
        
@@ -55,6 +54,9 @@ public class FracWindow extends JPanel {
         mapActions();
     }
     
+    //For button presses we need to use callable methods instead of keybinding 
+    //actions
+    
     public void passiter() {
         frac.iterate();
         frac.drawFractal();
@@ -62,10 +64,15 @@ public class FracWindow extends JPanel {
         this.requestFocus();
     }
 
-    
+    void passColor(byte color) {
+        frac.setColorSetting(color);
+    }
 
-    public void mapActions()
-    {
+    /**
+     * This method creates keybindings that work as long as the window is in 
+     * focus
+     */
+    public void mapActions() {
         InputMap inMap = this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         inMap.put(KeyStroke.getKeyStroke("C"), "iterate");
         inMap.put(KeyStroke.getKeyStroke("X"), "iterate5");
@@ -140,6 +147,8 @@ public class FracWindow extends JPanel {
                         repaint();
                 }
         };
+        
+        //Creates Action map that calls actions based on input map strings
         ActionMap actmap = this.getActionMap();
         actmap.put("iterate", iterate);
         actmap.put("iterate5", iterate5);
@@ -152,7 +161,4 @@ public class FracWindow extends JPanel {
         actmap.put("right", right);
     }
 
-    void passColor(byte color) {
-        frac.setColorSetting(color);
-    }
 }
