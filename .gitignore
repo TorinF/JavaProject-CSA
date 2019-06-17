@@ -3,7 +3,7 @@ manifest.mf
 *.form
 dist
 /src/bin
-
+build/classes
 # Compiled class file
 *.class
 
