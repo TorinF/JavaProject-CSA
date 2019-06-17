@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
 /* It's time to start using a layout manager,
@@ -50,9 +51,10 @@ public class LeftPanel extends JPanel
         b = new JButton("Iterate");
         b.setMinimumSize(new Dimension(10, 60));
         b.setPreferredSize(new Dimension(100, 60));
-        
+        b.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
         //I'm trying to make the button go left 
         b.setAlignmentX(SwingConstants.LEFT);
+        
         
         comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
         comb.setEditable(false);

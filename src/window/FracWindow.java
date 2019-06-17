@@ -76,8 +76,8 @@ public class FracWindow extends JPanel {
         InputMap inMap = this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         inMap.put(KeyStroke.getKeyStroke("C"), "iterate");
         inMap.put(KeyStroke.getKeyStroke("X"), "iterate5");
-        inMap.put(KeyStroke.getKeyStroke("Z"), "zoomIn");
-        inMap.put(KeyStroke.getKeyStroke("SPACE"), "zoomOut");
+        inMap.put(KeyStroke.getKeyStroke("Z"), "zoomOut");
+        inMap.put(KeyStroke.getKeyStroke("SPACE"), "zoomIn");
         
         inMap.put(KeyStroke.getKeyStroke("UP"), "up");
         inMap.put(KeyStroke.getKeyStroke("DOWN"), "down");

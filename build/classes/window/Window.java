@@ -69,7 +69,7 @@ public class Window extends BackgroundPanel
         
         LeftPanel left = new LeftPanel();
         
-        left.getIterButton().addActionListener(new ButtonPress() {
+        left.getIterButton().addActionListener(new ActionListener() {
             /* This creates an anonomous class that overrides the action 
             performed method*/
             
