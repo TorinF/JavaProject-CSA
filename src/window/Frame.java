@@ -3,6 +3,7 @@ package window;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.io.IOException;

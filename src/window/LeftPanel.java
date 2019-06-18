@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.io.IOException;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import static javax.swing.BoxLayout.Y_AXIS;
 import javax.swing.JButton;
@@ -48,8 +49,8 @@ public class LeftPanel extends JPanel
         
         
         b = new JButton("Iterate");
-        b.setMinimumSize(new Dimension(10, 60));
-        b.setPreferredSize(new Dimension(100, 60));
+        b.setMinimumSize(new Dimension(10, 30));
+        b.setPreferredSize(new Dimension(50, 30));
         b.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
         //I'm trying to make the button go left 
         b.setAlignmentX(SwingConstants.LEFT);
@@ -67,8 +68,7 @@ public class LeftPanel extends JPanel
         
         
         topPan.setLayout(grid2);
-        topPan.setMaximumSize(new Dimension(this.getMaximumSize().width,300));
-        topPan.setMinimumSize(new Dimension(this.getMaximumSize().width, 40));
+        topPan.setMaximumSize(new Dimension(this.getMaximumSize().width,50));
         topPan.setAlignmentX(SwingConstants.LEFT);
         topPan.setBackground(new Color(0, 0, 0,100));
         topPan.setOpaque(false);
