@@ -43,7 +43,7 @@ public class Window extends BackgroundPanel
         this.setOpaque(false);
         this.setBackground(new Color(0,0,0,1));
         
-        LayoutManager lay = new BorderLayout(50,30);
+        LayoutManager lay = new BorderLayout();
         setLayout(lay);
         
         JPanel pane = new JPanel();
@@ -51,6 +51,7 @@ public class Window extends BackgroundPanel
         LayoutManager layout2 = new BoxLayout(pane, BoxLayout.X_AXIS);
         pane.setAlignmentY(1);
         pane.setLayout(layout2);
+        pane.setOpaque(false);
         
         pane.setBackground(new Color(0, 0, 0,0));
         
@@ -61,7 +62,6 @@ public class Window extends BackgroundPanel
         
         //Adds fractal window
         FracWindow frac = new FracWindow(fracwidth, fracheight);
-        frac.setBorder(BorderFactory.createLineBorder(Color.black));
         
         LeftPanel left = new LeftPanel();
         
@@ -103,11 +103,11 @@ public class Window extends BackgroundPanel
         this.requestFocus();
         
         
-        add(Box.createHorizontalStrut(20), BorderLayout.LINE_START);
-        add(Box.createHorizontalStrut(20), BorderLayout.LINE_END);
-        add(Box.createVerticalStrut(20), BorderLayout.PAGE_START);
-        add(Box.createVerticalStrut(40), BorderLayout.PAGE_END);
-        pane.setOpaque(false);
+        add(Box.createHorizontalStrut(30), BorderLayout.LINE_START);
+        add(Box.createHorizontalStrut(30), BorderLayout.LINE_END);
+        add(Box.createVerticalStrut(30), BorderLayout.PAGE_START);
+        add(Box.createVerticalStrut(30), BorderLayout.PAGE_END);
+        
         add(pane, BorderLayout.CENTER);
     }
 }

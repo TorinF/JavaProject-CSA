@@ -24,42 +24,28 @@ public class Frame extends JFrame{
     
     // Instance vars
     public static int height = 800;
-    public static int width = 1500;
+    public static int width = 1200;
     
     public Frame(int width, int height) throws IOException
     {
         super();
         
-        
-        setLayout(null);
-        
+        //Background image
         Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
         
         Container pane = getContentPane();
         
-//        pane.add(Box.createHorizontalStrut(20), BorderLayout.LINE_START);
-//        pane.add(Box.createHorizontalStrut(20), BorderLayout.LINE_END);
-//        pane.add(Box.createVerticalStrut(20), BorderLayout.PAGE_START);
-//        pane.add(new JButton("hujygugyuguy"), BorderLayout.PAGE_END);
-//        
         Window win = new Window(width, height, image);
         pane.add(win, BorderLayout.CENTER);
         
-        // This closes program when window is closed
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent winEvt) {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                System.out.println("closing");
-                System.exit(0);
-            }
-        });
     }
     public static void main(String[] args) throws IOException
     {
         Frame f=new Frame(width, height);
         
         f.setSize(width,height);
-        f.setVisible(true);// making the frame visible
+        f.setVisible(true); //making the frame visible
     }
 }

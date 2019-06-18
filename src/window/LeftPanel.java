@@ -49,11 +49,8 @@ public class LeftPanel extends JPanel
         
         
         b = new JButton("Iterate");
-        b.setMinimumSize(new Dimension(10, 30));
         b.setPreferredSize(new Dimension(50, 30));
         b.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
-        //I'm trying to make the button go left 
-        b.setAlignmentX(SwingConstants.LEFT);
         
         
         comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
@@ -62,9 +59,8 @@ public class LeftPanel extends JPanel
         JPanel topPan = new JPanel();
         
         GridLayout grid2 = new GridLayout(0,1);
-        grid2.setHgap(10);
         
-        grid2.setVgap(4);
+        grid2.setVgap(6);
         
         
         topPan.setLayout(grid2);
@@ -80,7 +76,6 @@ public class LeftPanel extends JPanel
         //topPan.setOpaque(false);
         
         this.setBorder(BorderFactory.createLineBorder(Color.black));
-        help.setBorder(BorderFactory.createLineBorder(Color.black));
         
         this.setBackground(new Color(0, 0, 0,100));
         

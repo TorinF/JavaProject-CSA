@@ -5,13 +5,14 @@ import java.awt.Color;
 
 public class Fractal extends BufferedImage
 {
-    double xs = -2;
-    double xe = 2;
-    double ys = -2;
-    double ye = 2;
+    
+    double minX = -2;
+    double maxX = 2;
+    double minY = -2;
+    double maxY = 2;
     
     public int iter;
-    public static final int SHIFTDIV = 12;
+    public static final int MOVEFACTOR = 12;
     public static final int STARTITER = 2;
     
     private byte colorSetting;
@@ -45,8 +46,8 @@ public class Fractal extends BufferedImage
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getHeight(); j++) {
                 //setRGB(i,j, rgb2int(166,67,0));
-                x0 = ((double)i*(xe-xs)/getWidth()) + xs;
-                y0 = ((double)j*(ye-ys)/getHeight()) + ys;
+                x0 = ((double)i*(maxX-minX)/getWidth()) + minX;
+                y0 = ((double)j*(maxY-minY)/getHeight()) + minY;
                 x = 0;
                 y = 0;
                 iteration = 0;
@@ -71,49 +72,49 @@ public class Fractal extends BufferedImage
     shift proportional to how zoomed in it is*/
     public void moveRight()
     {
-        double range = Math.abs(xe - xs);
-        xs += range/SHIFTDIV;
-        xe += range/SHIFTDIV;
+        double range = Math.abs(maxX - minX);
+        minX += range/MOVEFACTOR;
+        maxX += range/MOVEFACTOR;
     }
     public void moveLeft()
     {
-        double range = Math.abs(xe - xs);
-        xs -= range/SHIFTDIV;
-        xe -= range/SHIFTDIV;
+        double range = Math.abs(maxX - minX);
+        minX -= range/MOVEFACTOR;
+        maxX -= range/MOVEFACTOR;
     }
     public void moveUp()
     {
-        double range = Math.abs(ye - ys);
-        ys -= range/SHIFTDIV;
-        ye -= range/SHIFTDIV;
+        double range = Math.abs(maxY - minY);
+        minY -= range/MOVEFACTOR;
+        maxY -= range/MOVEFACTOR;
     }
     public void moveDown()
     {
-        double range = Math.abs(ye - ys);
-        ys += range/SHIFTDIV;
-        ye += range/SHIFTDIV;
+        double range = Math.abs(maxY - minY);
+        minY += range/MOVEFACTOR;
+        maxY += range/MOVEFACTOR;
     }
     
     // Zooms in by reducing ranges
     public void zoomIn()
     {
-    	double rangeX = Math.abs(xe - xs);
-    	double rangeY = Math.abs(ye - ys);
-    	xs += rangeX/SHIFTDIV;
-    	xe -= rangeX/SHIFTDIV;
-    	ys += rangeY/SHIFTDIV;
-    	ye -= rangeY/SHIFTDIV;
+    	double rangeX = Math.abs(maxX - minX);
+    	double rangeY = Math.abs(maxY - minY);
+    	minX += rangeX/MOVEFACTOR;
+    	maxX -= rangeX/MOVEFACTOR;
+    	minY += rangeY/MOVEFACTOR;
+    	maxY -= rangeY/MOVEFACTOR;
     	
     }
     
     public void zoomOut()
     {
-        double rangeX = Math.abs(xe - xs);
-    	double rangeY = Math.abs(ye - ys);
-    	xs -= rangeX/SHIFTDIV;
-    	xe += rangeX/SHIFTDIV;
-    	ys -= rangeY/SHIFTDIV;
-    	ye += rangeY/SHIFTDIV;
+        double rangeX = Math.abs(maxX - minX);
+    	double rangeY = Math.abs(maxY - minY);
+    	minX -= rangeX/MOVEFACTOR;
+    	maxX += rangeX/MOVEFACTOR;
+    	minY -= rangeY/MOVEFACTOR;
+    	maxY += rangeY/MOVEFACTOR;
     }
     // Iterate functions to change the iteration
     
