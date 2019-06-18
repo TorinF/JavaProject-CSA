@@ -1,4 +1,4 @@
-package window;
+package Mandlbrot;
 
 import java.awt.image.BufferedImage;
 import java.awt.Color;

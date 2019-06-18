@@ -1,4 +1,4 @@
-package window;
+package Mandlbrot;
 
 //Use IDE to manage what packages are used
 import java.awt.Color;

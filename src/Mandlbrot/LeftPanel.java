@@ -1,4 +1,4 @@
-package window;
+package Mandlbrot;
 
 
 import java.awt.Color;
@@ -39,7 +39,7 @@ public class LeftPanel extends JPanel
         
         setLayout(lay);
         
-        this.setMaximumSize(new Dimension(300, Frame.height));
+        this.setMaximumSize(new Dimension(300, Main.height));
         
         JEditorPane help = new JEditorPane();
         help.setEditable(false);

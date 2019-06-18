@@ -1,4 +1,4 @@
-package window;
+package Mandlbrot;
 
 
 import java.awt.BorderLayout;
@@ -20,22 +20,28 @@ import javax.swing.JFrame;
  *
  * @author torin
  */
-public class Frame extends JFrame{
+public class Main extends JFrame{
     
     // Instance vars
     public static int height = 800;
     public static int width = 1200;
     
-    public Frame(int width, int height) throws IOException
+    public Main(int width, int height) throws IOException
     {
-        super();
+        super("MandleBrot Lite");
         
         //Background image
         Image image = ImageIO.read(getClass().getResource("/Images/spacemind.jpg"));
         
+        //Set application icon
+        Image icon = ImageIO.read(getClass().getResource("/Images/icon.jpg"));
+        this.setIconImage(icon);
+        
+        
         Container pane = getContentPane();
         
         Window win = new Window(width, height, image);
+        win.setPreferredSize(new Dimension(width,height));
         pane.add(win, BorderLayout.CENTER);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +49,7 @@ public class Frame extends JFrame{
     }
     public static void main(String[] args) throws IOException
     {
-        Frame f=new Frame(width, height);
+        Main f=new Main(width, height);
         
         f.setSize(width,height);
         f.setVisible(true); //making the frame visible
