@@ -5,6 +5,7 @@
 /src/bin
 /build
 /nbproject
+/src/bin
 
 # IDE files
 manifest.mf
