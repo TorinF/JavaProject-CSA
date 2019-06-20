@@ -1,4 +1,4 @@
-package app.src;
+package Mandlbrot;
 
  
 

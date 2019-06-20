@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IDE directories
 /test
 /dist
@@ -16,6 +17,7 @@ build.xml
 
 # Compiled class file
 *.class
+
 
 # Log file
 *.log
