@@ -1,8 +1,18 @@
-test
+# IDE directories
+/test
+/dist
+/src/bin
+/build
+/nbproject
+
+# IDE files
 manifest.mf
 *.form
-dist
-/src/bin
+.project
+theme*.xml
+build.xml
+
+
 
 # Compiled class file
 *.class
