@@ -5,7 +5,7 @@ View the mandlebrot set
 2. Run the program by clicking on it
    or use the command 
    ```bash
-   java -jar your/directory/Mandlebrot_Lite.jar
+   $ java -jar your/directory/Mandlebrot_Lite.jar
    ```
 ## Pros
 * Made by highschooler
