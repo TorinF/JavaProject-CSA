@@ -1,5 +1,9 @@
 # MandlebrotLite
-View the mandlebrot set
+### Explore the mandlebrot set
+<img src="https://imgur.com/LHlvFzw.png" />
+
+## Requirements
+* Java 8
 ## How to run
 1. [Download](https://github.com/TorinF/JavaProject-CSA/releases) the jar file
 2. Run the program by clicking on it
