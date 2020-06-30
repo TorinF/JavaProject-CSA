@@ -18,6 +18,7 @@ import javax.swing.BoxLayout;
 //swing classes
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 
 
@@ -49,7 +50,6 @@ public class Window extends BackgroundPanel
         JPanel pane = new JPanel();
         
         LayoutManager layout2 = new BoxLayout(pane, BoxLayout.X_AXIS);
-        pane.setAlignmentY(1);
         pane.setLayout(layout2);
         pane.setOpaque(false);
         
@@ -95,6 +95,7 @@ public class Window extends BackgroundPanel
 
         
         left.setPreferredSize(new Dimension(300, height));
+        left.setAlignmentY(SwingConstants.TOP);
         
         
         
