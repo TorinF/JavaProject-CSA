@@ -33,7 +33,6 @@ public class LeftPanel extends JPanel
     private JButton b;
     private BoxLayout lay;
     private JComboBox comb;
-	private FracWindow fracRef;
     public LeftPanel() throws IOException
     {
         
@@ -50,15 +49,11 @@ public class LeftPanel extends JPanel
         help.setPage(file);
         help.setOpaque(false);
         
-        /*Behaviour for the iterate button is defined in the Window class, this 
-		is because you can't access or communicate with the FracWindow class object
-		I am going to try to change this*/
 		
         b = new JButton("Iterate");
         b.setPreferredSize(new Dimension(50, 30));
         b.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 		
-        
         
         comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
         comb.setEditable(false);
