@@ -4,6 +4,8 @@ package Mandlbrot;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -31,6 +33,7 @@ public class LeftPanel extends JPanel
     private JButton b;
     private BoxLayout lay;
     private JComboBox comb;
+	private FracWindow fracRef;
     public LeftPanel() throws IOException
     {
         
@@ -47,10 +50,14 @@ public class LeftPanel extends JPanel
         help.setPage(file);
         help.setOpaque(false);
         
-        
+        /*Behaviour for the iterate button is defined in the Window class, this 
+		is because you can't access or communicate with the FracWindow class object
+		I am going to try to change this*/
+		
         b = new JButton("Iterate");
         b.setPreferredSize(new Dimension(50, 30));
         b.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
+		
         
         
         comb = new JComboBox(new String[]{"Sunset", "Hot Iron"});
@@ -83,6 +90,19 @@ public class LeftPanel extends JPanel
         add(topPan);
         add(help);
     }
+	public void setButtonLink(FracWindow frac)
+	{
+		b.addActionListener(new ActionListener() {
+            /* This creates an anonomous class that overrides the action
+			Performed method*/
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frac.passiter();
+            }
+        });
+		
+	}
     public JButton getIterButton()
     {
         return b;

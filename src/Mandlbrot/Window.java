@@ -64,16 +64,16 @@ public class Window extends BackgroundPanel
         FracWindow frac = new FracWindow(fracwidth, fracheight);
         
         LeftPanel left = new LeftPanel();
-        
-        left.getIterButton().addActionListener(new ActionListener() {
-            /* This creates an anonomous class that overrides the action 
-            performed method*/
-            
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frac.passiter();
-            }
-        });
+        left.setButtonLink(frac);
+//        left.getIterButton().addActionListener(new ActionListener() {
+//            /* This creates an anonomous class that overrides the action 
+//            performed method*/
+//            
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                frac.passiter();
+//            }
+//        });
         
         left.getCombBox().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
