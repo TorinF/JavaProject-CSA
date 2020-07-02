@@ -64,7 +64,7 @@ public class Window extends BackgroundPanel
         FracWindow frac = new FracWindow(fracwidth, fracheight);
         
         LeftPanel left = new LeftPanel();
-        left.setButtonLink(frac);
+        left.setIterateButtonLink(frac);
 
         left.getCombBox().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {

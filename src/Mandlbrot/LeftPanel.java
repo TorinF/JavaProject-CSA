@@ -85,7 +85,7 @@ public class LeftPanel extends JPanel
         add(topPan);
         add(help);
     }
-	public void setButtonLink(FracWindow frac)
+	public void setIterateButtonLink(FracWindow frac)
 	{
 		b.addActionListener(new ActionListener() {
             /* This creates an anonomous class that overrides the action
